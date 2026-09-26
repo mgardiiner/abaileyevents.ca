@@ -14,7 +14,7 @@ const photoFailed = ref(false)
       </nav>
       <!-- A wide panorama, unlike the tall frames further down -->
       <div v-if="!photoFailed" class="mx-auto mt-14 max-w-wrap overflow-hidden rounded-sm md:mt-16">
-        <img :src="page.photo" :alt="page.photoAlt" class="aspect-[4/3] w-full object-cover object-[center_35%] sm:aspect-[16/9] md:aspect-[21/8]" @error="photoFailed = true">
+        <img :src="page.photo" :style="photoFocus(page.photo)" :alt="page.photoAlt" class="aspect-[4/3] w-full object-cover object-[center_35%] sm:aspect-[16/9] md:aspect-[21/8]" @error="photoFailed = true">
       </div>
     </PageHeader>
     <PlanningSection />

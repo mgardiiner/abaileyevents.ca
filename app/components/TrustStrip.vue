@@ -7,7 +7,7 @@ const hero = useContent('hero')
     <div class="mx-auto flex max-w-wrap flex-wrap justify-center gap-x-8 gap-y-2.5 text-[0.7rem] font-medium uppercase tracking-[0.26em] text-ink-muted">
       <span v-for="(item, i) in hero.trust" :key="item" class="inline-flex items-center gap-8">
         {{ item }}
-        <span v-if="i < hero.trust.length - 1" class="text-[0.8rem] text-sage" aria-hidden="true">❀</span>
+        <RoseMark v-if="i < hero.trust.length - 1" class="h-[1.1rem] w-[1.1rem] shrink-0 text-sage" :weight="1.8" />
       </span>
     </div>
   </div>

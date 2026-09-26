@@ -42,6 +42,13 @@ interface PhotoRequest {
   resolve: (path: string | null) => void
 }
 
+// Photos to choose the focus of, one after another.
+interface FocusRequest {
+  paths: string[]
+  resolve: () => void
+}
+export type FocusPoint = [x: number, y: number]
+
 export interface Problem {
   section: Section
   group: Group
@@ -65,6 +72,7 @@ const state = reactive({
   deploy: null as null | { commit: string, state: DeployState, startedAt: number },
   toasts: [] as Toast[],
   photoRequest: null as PhotoRequest | null,
+  focusRequest: null as FocusRequest | null,
 })
 
 let backend: Backend | null = null
@@ -249,17 +257,41 @@ export function groupChanges(group: Group) {
   return group.fields.filter(field => fieldPaths(field, '').some(path => isChanged(fileOf(field, group), path))).length
 }
 
-export const sectionChanges = (section: Section) => section.groups.reduce((total, group) => total + groupChanges(group), 0)
+// Photos whose focus changed. focus.json isn't a page of its own, so each one counts as a change on
+// every page that shows that photo.
+function changedFocus() {
+  const draft = state.draft.focus ?? {}
+  const original = state.original.focus ?? {}
+  return [...new Set([...Object.keys(draft), ...Object.keys(original)])].filter(path => !same(draft[path], original[path]))
+}
+// Without a section, counts photos in use anywhere on the website.
+function focusChangesIn(section?: Section) {
+  const paths = changedFocus()
+  if (!paths.length) return 0
+  const files = section
+    ? new Set(section.groups.flatMap(group => group.fields.map(field => fileOf(field, group))))
+    : contentNames.filter(name => name !== 'focus')
+  const text = [...files].map(file => JSON.stringify(state.draft[file])).join()
+  return paths.filter(path => text.includes(JSON.stringify(path))).length
+}
+
+const contentChanges = (section: Section) => section.groups.reduce((total, group) => total + groupChanges(group), 0)
+export const sectionChanges = (section: Section) => contentChanges(section) + focusChangesIn(section)
 
 export const changedSections = () => sections.filter(section => sectionChanges(section) > 0)
+
+// A photo shown on two pages is still one change.
+export const changeCount = () => sections.reduce((total, section) => total + contentChanges(section), 0) + focusChangesIn()
 
 function areaNames(files: ContentName[]) {
   const names = sections.filter(section => section.groups.some(group => group.fields.some(field => files.includes(fileOf(field, group))))).map(section => section.title)
   return [...new Set(names)].join(', ')
 }
 
+// A focus point alone doesn't count as using a photo.
 const pendingPhotosInUse = () => {
-  const text = JSON.stringify(state.draft)
+  const { focus: _, ...content } = state.draft
+  const text = JSON.stringify(content)
   return [...blobs.keys()].filter(path => text.includes(JSON.stringify(path)))
 }
 
@@ -337,6 +369,36 @@ export function closePhotoChooser(path: string | null) {
   state.photoRequest = null
 }
 
+// --- Photo focus ------------------------------------------------------------------------------
+
+// The spot kept in view when the website crops a photo, as [x, y] percentages; the middle if unset.
+export const focusOf = (path: string): FocusPoint => state.draft.focus?.[path] ?? [50, 50]
+export const focusStyle = (path: string) => ({ objectPosition: focusOf(path).map(n => `${n}%`).join(' ') })
+
+export function setFocus(path: string, point: FocusPoint | null) {
+  const focus = (state.draft.focus ??= {}) as Record<string, FocusPoint>
+  const [x, y] = point ? point.map(Math.round) as FocusPoint : [50, 50]
+  // The middle is the default, so it's left out of the file.
+  if (x === 50 && y === 50) delete focus[path]
+  else focus[path] = [x, y]
+}
+
+// Opens the "Choose what shows" dialog for one or more photos; resolves when it closes.
+export function chooseFocus(paths: string[]) {
+  state.focusRequest?.resolve()
+  return new Promise<void>((resolve) => {
+    state.focusRequest = paths.length ? { paths, resolve } : null
+    if (!paths.length) resolve()
+  })
+}
+
+export function closeFocusChooser() {
+  state.focusRequest?.resolve()
+  state.focusRequest = null
+}
+
+export const isPendingPhoto = (path: string) => !!state.photos[path]?.pending
+
 // The draft with photos that aren't on the live site yet pointing at their copy in the browser.
 export function previewFiles() {
   let text = JSON.stringify(state.draft)
@@ -348,8 +410,10 @@ export function previewFiles() {
 
 export async function publish() {
   if (!backend || state.publishing) return
-  const names = changedFiles()
   const photos = pendingPhotosInUse()
+  // A new photo that was framed and then taken out again won't be uploaded, so drop its focus too.
+  for (const path of Object.keys(state.draft.focus ?? {})) if (blobs.has(path) && !photos.includes(path)) delete state.draft.focus[path]
+  const names = changedFiles()
   const areas = changedSections().map(section => section.title)
   state.publishing = 'Getting your changes ready…'
   try {

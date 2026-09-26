@@ -12,7 +12,7 @@ const portraitFailed = ref(false)
         <div class="absolute -inset-3 rounded-[50%] border border-beige-deep/60" aria-hidden="true" />
         <div class="relative aspect-[3/4] overflow-hidden rounded-[50%] bg-ivory">
           <PhotoPlaceholder v-if="portraitFailed" :file="about.portrait" label="Your portrait here" />
-          <img v-else :src="about.portrait" :alt="about.portraitAlt" loading="lazy" class="h-full w-full object-cover" @error="portraitFailed = true">
+          <img v-else :src="about.portrait" :style="photoFocus(about.portrait)" :alt="about.portraitAlt" loading="lazy" class="h-full w-full object-cover" @error="portraitFailed = true">
         </div>
       </div>
       <div v-reveal class="text-center md:text-left">

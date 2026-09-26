@@ -17,7 +17,7 @@ const failed = reactive(new Set<string>())
         :class="i % 2 ? 'mt-10 aspect-[4/5] md:mt-16' : 'aspect-[3/4]'"
       >
         <PhotoPlaceholder v-if="failed.has(photo.src)" :file="photo.src" />
-        <img v-else :src="photo.src" :alt="photo.alt" loading="lazy" class="h-full w-full object-cover" @error="failed.add(photo.src)">
+        <img v-else :src="photo.src" :style="photoFocus(photo.src)" :alt="photo.alt" loading="lazy" class="h-full w-full object-cover" @error="failed.add(photo.src)">
       </div>
     </div>
     <div v-reveal class="mt-12 text-center">

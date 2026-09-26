@@ -17,7 +17,7 @@ const failed = reactive(new Set<string>())
           :class="i === 0 ? 'rounded-t-full' : 'mt-12 rounded-sm sm:mt-20'"
         >
           <PhotoPlaceholder v-if="failed.has(photo.src)" :file="photo.src" />
-          <img v-else :src="photo.src" :alt="photo.alt" class="h-full w-full object-cover" @error="failed.add(photo.src)">
+          <img v-else :src="photo.src" :style="photoFocus(photo.src)" :alt="photo.alt" class="h-full w-full object-cover" @error="failed.add(photo.src)">
         </div>
       </div>
     </PageHeader>

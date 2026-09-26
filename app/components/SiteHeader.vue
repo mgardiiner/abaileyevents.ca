@@ -28,7 +28,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
     :class="scrolled || open ? 'bg-ivory/95 shadow-nav backdrop-blur' : ''"
   >
     <NuxtLink to="/" class="font-serif text-[1.35rem] tracking-[0.06em] text-ink">
-      <b class="font-semibold">ABailey</b> Events <span class="text-sage">❀</span>
+      <b class="font-semibold">ABailey</b> Events <RoseMark class="inline-block h-[1.1em] w-[1.1em] align-[-0.16em] text-sage" :weight="1.4" />
     </NuxtLink>
     <button class="text-2xl text-ink lg:hidden" aria-label="Menu" :aria-expanded="open" @click="open = !open">☰</button>
     <ul

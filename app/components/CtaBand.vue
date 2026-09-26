@@ -5,7 +5,7 @@ const contact = useContent('contact')
 <!-- Full-width photo band that closes most pages with a way to get in touch -->
 <template>
   <section id="book" class="relative isolate overflow-hidden px-6 py-28 text-center md:py-36">
-    <img :src="contact.band.photo" alt="" loading="lazy" class="absolute inset-0 -z-20 h-full w-full object-cover">
+    <img :src="contact.band.photo" :style="photoFocus(contact.band.photo)" alt="" loading="lazy" class="absolute inset-0 -z-20 h-full w-full object-cover">
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/60 via-ink/50 to-ink/65" aria-hidden="true" />
     <div v-reveal>
       <p class="font-script text-[clamp(2rem,4.5vw,2.8rem)] text-beige">{{ contact.scriptLine }}</p>

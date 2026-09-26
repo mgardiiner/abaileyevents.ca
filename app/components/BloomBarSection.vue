@@ -12,10 +12,10 @@ const failed = reactive(new Set<string>())
       <div v-reveal class="relative mx-auto w-full max-w-[440px]">
         <div class="aspect-square overflow-hidden rounded-full bg-cream">
           <PhotoPlaceholder v-if="failed.has(bloomBar.photo)" :file="bloomBar.photo" />
-          <img v-else :src="bloomBar.photo" :alt="bloomBar.photoAlt" loading="lazy" class="h-full w-full object-cover object-[center_40%]" @error="failed.add(bloomBar.photo)">
+          <img v-else :src="bloomBar.photo" :style="photoFocus(bloomBar.photo)" :alt="bloomBar.photoAlt" loading="lazy" class="h-full w-full object-cover object-[center_40%]" @error="failed.add(bloomBar.photo)">
         </div>
         <div class="absolute -bottom-8 -left-2 hidden aspect-[2/3] w-[34%] overflow-hidden rounded-t-full border-[6px] border-white bg-cream shadow-lift sm:block lg:-left-10">
-          <img v-if="!failed.has(bloomBar.detail)" :src="bloomBar.detail" :alt="bloomBar.detailAlt" loading="lazy" class="h-full w-full object-cover" @error="failed.add(bloomBar.detail)">
+          <img v-if="!failed.has(bloomBar.detail)" :src="bloomBar.detail" :style="photoFocus(bloomBar.detail)" :alt="bloomBar.detailAlt" loading="lazy" class="h-full w-full object-cover" @error="failed.add(bloomBar.detail)">
         </div>
       </div>
       <div v-reveal>
@@ -25,7 +25,7 @@ const failed = reactive(new Set<string>())
         <p class="mb-3 mt-7 text-[0.68rem] font-medium uppercase tracking-[0.24em] text-ink-muted">{{ bloomBar.perfectForLabel }}</p>
         <ul class="grid w-fit grid-cols-2 gap-x-10 gap-y-1.5 font-serif text-[1.2rem] italic text-ink-soft">
           <li v-for="occasion in bloomBar.perfectFor" :key="occasion" class="flex items-center gap-2.5">
-            <span class="not-italic text-[0.7rem] text-sage" aria-hidden="true">❀</span>{{ occasion }}
+            <RoseMark class="h-[1rem] w-[1rem] shrink-0 text-sage" :weight="1.8" />{{ occasion }}
           </li>
         </ul>
         <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">

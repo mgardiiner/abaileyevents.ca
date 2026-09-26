@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import { CircleCheck, CircleAlert, ExternalLink, LoaderCircle, TriangleAlert, X } from 'lucide-vue-next'
 import { EditorError, SITE_URL } from '~/admin/backend'
-import { changedSections, discardAll, dismissDeploy, editor, hasChanges, load, notify, problems, publish, sectionChanges, signOut, type Problem } from '~/admin/editor'
+import { changeCount, changedSections, discardAll, dismissDeploy, editor, hasChanges, load, notify, problems, publish, signOut, type Problem } from '~/admin/editor'
 
 const changes = computed(() => hasChanges())
 const areas = computed(() => changedSections())
-const count = computed(() => areas.value.reduce((total, section) => total + sectionChanges(section), 0))
+const count = computed(changeCount)
 const siteUrl = computed(() => editor.backend === 'local' ? '/' : SITE_URL)
 
 const confirmDialog = ref<HTMLDialogElement>()
 const problemDialog = ref<HTMLDialogElement>()
 const errorDialog = ref<HTMLDialogElement>()
 const found = ref<Problem[]>([])
-const failure = ref<{ title: string, body: string, action?: { label: string, run: () => void } } | null>(null)
+const failure = ref<{ title: string, body: string, detail?: string, action?: { label: string, run: () => void } } | null>(null)
+// Signed in with the editor password, the GitHub key is out of sight, so errors about it say
+// "the editor" rather than "your key".
+const passwordSignIn = !!useRuntimeConfig().public.adminKey
 
 function start() {
   found.value = problems()
@@ -41,9 +44,20 @@ function explain(error: unknown): NonNullable<typeof failure.value> {
     }
   }
   if (code === 'offline') return { title: 'Couldn\'t reach the internet', body: 'Check your connection and try publishing again. Your changes are saved on this device, so nothing is lost.' }
-  if (code === 'bad-key') return { title: 'Your access key has stopped working', body: 'It may have expired. Sign in again with a new key. Your changes are saved on this device and will be here when you do.', action: { label: 'Sign in again', run: signOut } }
-  if (code === 'read-only') return { title: 'This key can\'t publish', body: 'Your access key can view the website but not save changes to it. Ask the person who set up your website for a key that can publish.' }
-  return { title: 'Something went wrong', body: 'Your changes weren\'t published, but they\'re still saved on this device. Please try again in a minute. If it keeps happening, let the person who set up your website know.' }
+  const detail = error instanceof Error ? error.message : String(error)
+  if (code === 'bad-key') {
+    return passwordSignIn
+      ? { title: 'The editor\'s access has stopped working', body: 'Its access to your website may have expired. Ask the person who set up your website to renew it. Your changes are saved on this device and will be here when it\'s fixed.', detail }
+      : { title: 'Your access key has stopped working', body: 'It may have expired. Sign in again with a new key. Your changes are saved on this device and will be here when you do.', action: { label: 'Sign in again', run: signOut } }
+  }
+  if (code === 'read-only') {
+    return {
+      title: passwordSignIn ? 'The editor isn\'t allowed to publish yet' : 'This key can\'t publish',
+      body: `${passwordSignIn ? 'The editor can open your website but isn\'t allowed to save changes to it.' : 'Your access key can view the website but not save changes to it.'} Ask the person who set up your website to allow publishing. Your changes are saved on this device, so nothing is lost: press Publish again once it's fixed.`,
+      detail,
+    }
+  }
+  return { title: 'Something went wrong', body: 'Your changes weren\'t published, but they\'re still saved on this device. Please try again in a minute. If it keeps happening, let the person who set up your website know.', detail }
 }
 
 function goTo(problem: Problem) {
@@ -159,6 +173,10 @@ const deployMessage = computed(() => {
       <div v-if="failure" class="grid gap-5 p-6 sm:p-8">
         <h3 class="font-serif text-[1.8rem] leading-tight text-ink">{{ failure.title }}</h3>
         <p class="text-ink-soft">{{ failure.body }}</p>
+        <details v-if="failure.detail" class="-mt-2 text-[0.82rem] text-ink-muted">
+          <summary class="cursor-pointer">Details for whoever set up your website</summary>
+          <p class="mt-1.5 break-words font-mono">{{ failure.detail }}</p>
+        </details>
         <div class="flex flex-wrap justify-end gap-3">
           <button type="button" class="a-btn a-btn-quiet" @click="errorDialog?.close()">Close</button>
           <button v-if="failure.action" type="button" class="a-btn a-btn-primary" @click="errorDialog?.close(); failure.action.run()">{{ failure.action.label }}</button>

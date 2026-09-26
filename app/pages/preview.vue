@@ -28,7 +28,7 @@ async function unlock() {
 <template>
   <main class="bg-hero flex min-h-svh flex-col items-center justify-center px-6 py-[90px] text-center text-ink">
     <p class="mb-10 font-serif text-[1.5rem] tracking-[0.06em] text-ink">
-      <b class="font-semibold">ABailey</b> Events <span class="text-sage">❀</span>
+      <b class="font-semibold">ABailey</b> Events <RoseMark class="inline-block h-[1.1em] w-[1.1em] align-[-0.16em] text-sage" :weight="1.4" />
     </p>
     <h1 class="text-[clamp(2.4rem,6vw,3.6rem)] text-ink">
       Site <em class="italic text-sage">preview</em>.

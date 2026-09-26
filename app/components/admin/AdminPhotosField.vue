@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ChevronLeft, ChevronRight, ImagePlus, RefreshCw, Trash2 } from 'lucide-vue-next'
+import { ChevronLeft, ChevronRight, Crosshair, ImagePlus, RefreshCw, Trash2 } from 'lucide-vue-next'
 import type { ContentName } from '~/composables/useContent'
-import { choosePhoto, editor, getAt, notify, photoUrl, removeWithUndo, setAt } from '~/admin/editor'
+import { chooseFocus, choosePhoto, editor, focusStyle, getAt, isPendingPhoto, notify, photoUrl, removeWithUndo, setAt } from '~/admin/editor'
 import type { PhotosField } from '~/admin/sections'
 
 // A row of photos: `{ src, alt }` records, or with `fromGallery`, paths of gallery photos.
@@ -34,6 +34,8 @@ async function pick(index?: number) {
   if (!getAt(editor.draft[props.file], props.path)) setAt(editor.draft[props.file], props.path, [])
   if (index === undefined) items.value.push(next)
   else items.value.splice(index, 1, next)
+  // A photo just uploaded goes straight on to choosing what part of it shows.
+  if (isPendingPhoto(path)) await chooseFocus([path])
 }
 
 function move(from: number, to: number) {
@@ -48,7 +50,7 @@ function move(from: number, to: number) {
     <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
       <div v-for="(item, i) in items" :key="`${i}-${srcOf(item)}`" class="grid content-start gap-2">
         <button type="button" class="group relative aspect-[4/5] overflow-hidden rounded-lg bg-cream ring-1 ring-ink/10" title="Swap this photo" @click="pick(i)">
-          <img :src="photoUrl(srcOf(item))" alt="" loading="lazy" class="h-full w-full object-cover transition-opacity group-hover:opacity-75">
+          <img :src="photoUrl(srcOf(item))" alt="" loading="lazy" class="h-full w-full object-cover transition-opacity group-hover:opacity-75" :style="focusStyle(srcOf(item))">
           <span class="absolute left-2 top-2 grid h-7 min-w-7 place-items-center rounded-full bg-white/90 px-2 text-[0.8rem] font-medium text-ink shadow-sm">{{ i + 1 }}</span>
           <span class="absolute inset-x-2 bottom-2 flex items-center justify-center gap-1.5 rounded-full bg-white/90 py-1.5 text-[0.8rem] font-medium text-ink opacity-0 shadow-sm transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
             <RefreshCw class="h-3.5 w-3.5" aria-hidden="true" /> Swap photo
@@ -56,6 +58,9 @@ function move(from: number, to: number) {
         </button>
         <div class="flex items-center justify-between">
           <div class="flex">
+            <button type="button" class="a-icon-btn" title="Choose what shows" @click="chooseFocus([srcOf(item)])">
+              <Crosshair class="h-[18px] w-[18px]" /><span class="sr-only">Choose what shows</span>
+            </button>
             <button type="button" class="a-icon-btn" :disabled="i === 0" title="Move earlier" @click="move(i, i - 1)">
               <ChevronLeft class="h-5 w-5" /><span class="sr-only">Move earlier</span>
             </button>

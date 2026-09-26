@@ -20,7 +20,7 @@ const failed = reactive(new Set<string>())
       >
         <div class="relative mx-auto aspect-[5/4] max-w-[380px] overflow-hidden rounded-sm bg-cream sm:aspect-[3/4]">
           <PhotoPlaceholder v-if="failed.has(item.photo)" :file="item.photo" />
-          <img v-else :src="item.photo" :alt="item.photoAlt" loading="lazy" class="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]" @error="failed.add(item.photo)">
+          <img v-else :src="item.photo" :style="photoFocus(item.photo)" :alt="item.photoAlt" loading="lazy" class="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]" @error="failed.add(item.photo)">
           <span class="absolute left-4 top-4 rounded-full bg-ivory/90 px-3.5 py-1.5 text-[0.62rem] font-medium uppercase tracking-[0.2em] text-ink backdrop-blur-sm">{{ item.meta }}</span>
         </div>
         <p class="mt-7 font-serif text-[1.2rem] italic text-sage">0{{ i + 1 }}</p>

@@ -18,7 +18,7 @@ onBeforeUnmount(() => clearInterval(timer))
 
 <template>
   <header id="top" class="bg-hero relative overflow-hidden px-6 pb-24 pt-[112px] lg:flex lg:min-h-svh lg:items-center lg:pb-20 lg:pt-[104px]">
-    <BotanicalSprig class="pointer-events-none absolute -bottom-28 -left-[110px] w-[220px] rotate-[18deg] opacity-30 sm:w-[300px]" color="#7D8B74" />
+    <RoseStem class="pointer-events-none absolute -bottom-28 -left-[110px] w-[220px] rotate-[18deg] opacity-30 sm:-bottom-52 sm:-left-[130px] sm:w-[300px]" color="#7D8B74" />
 
     <div class="relative mx-auto grid w-full max-w-wrap items-center gap-16 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-20">
       <div class="text-center lg:text-left">
@@ -47,6 +47,7 @@ onBeforeUnmount(() => clearInterval(timer))
             v-for="(slide, i) in hero.slides"
             :key="slide.src"
             :src="slide.src"
+            :style="photoFocus(slide.src)"
             :alt="slide.alt"
             :aria-hidden="i !== current"
             class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-in-out"
@@ -54,7 +55,7 @@ onBeforeUnmount(() => clearInterval(timer))
           >
         </div>
         <div class="absolute -bottom-9 -left-10 hidden h-[150px] w-[150px] overflow-hidden rounded-full border-[6px] border-ivory shadow-lift sm:block">
-          <img :src="hero.accent.src" :alt="hero.accent.alt" class="h-full w-full object-cover">
+          <img :src="hero.accent.src" :style="photoFocus(hero.accent.src)" :alt="hero.accent.alt" class="h-full w-full object-cover">
         </div>
         <div class="absolute -bottom-4 right-2 flex gap-2" aria-hidden="true">
           <span

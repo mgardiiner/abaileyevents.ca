@@ -23,7 +23,7 @@ const failed = reactive(new Set<string>())
         :class="i === 0 ? 'col-span-2 aspect-[4/3] md:row-span-2 md:aspect-auto' : 'aspect-square md:aspect-auto'"
       >
         <PhotoPlaceholder v-if="failed.has(shot.src)" :file="shot.src" />
-        <img v-else :src="shot.src" :alt="shot.alt" loading="lazy" class="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]" @error="failed.add(shot.src)">
+        <img v-else :src="shot.src" :style="photoFocus(shot.src)" :alt="shot.alt" loading="lazy" class="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]" @error="failed.add(shot.src)">
         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-b from-transparent to-ink/60 px-4 pb-3 pt-10 text-[0.7rem] uppercase tracking-[0.14em] text-ivory transition-opacity duration-500 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100">
           {{ shot.caption }}
         </span>

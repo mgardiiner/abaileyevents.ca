@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LoaderCircle, Search, Upload, X } from 'lucide-vue-next'
-import { addPhoto, closePhotoChooser, editor, photoUrl } from '~/admin/editor'
+import { addPhoto, closePhotoChooser, editor, focusStyle, photoUrl } from '~/admin/editor'
 import { UnsupportedPhotoError, folderLabel } from '~/admin/photos'
 
 const dialog = ref<HTMLDialogElement>()
@@ -100,7 +100,7 @@ async function upload(file: File | undefined) {
             <h4 class="mb-2 text-[0.75rem] font-medium uppercase tracking-[0.14em] text-ink-faint">{{ group.title }}</h4>
             <div class="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6">
               <button v-for="photo in group.photos" :key="photo.src" type="button" class="group relative aspect-square overflow-hidden rounded-md bg-cream ring-1 ring-ink/10 focus-visible:ring-4 focus-visible:ring-sage/40" :title="photo.label" @click="choose(photo.src)">
-                <img :src="photoUrl(photo.src)" :alt="photo.label" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                <img :src="photoUrl(photo.src)" :alt="photo.label" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" :style="focusStyle(photo.src)">
               </button>
             </div>
           </section>

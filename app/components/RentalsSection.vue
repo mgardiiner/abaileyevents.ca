@@ -40,7 +40,7 @@ const failed = reactive(new Set<string>())
         <div v-if="items.length" class="mt-10 grid gap-[22px] min-[520px]:grid-cols-2 md:grid-cols-3">
           <article v-for="item in items" :key="item.name" v-reveal class="overflow-hidden rounded-sm bg-white shadow-soft ring-1 ring-ink/[0.06]">
             <div class="relative aspect-[4/3]">
-              <img v-if="item.photo && !failed.has(item.photo)" :src="item.photo" :alt="item.photoAlt ?? item.name" loading="lazy" class="h-full w-full object-cover" @error="item.photo && failed.add(item.photo)">
+              <img v-if="item.photo && !failed.has(item.photo)" :src="item.photo" :style="photoFocus(item.photo)" :alt="item.photoAlt ?? item.name" loading="lazy" class="h-full w-full object-cover" @error="item.photo && failed.add(item.photo)">
               <div v-else class="ph-tint-1 absolute inset-0 flex items-center justify-center">
                 <ServiceIcon name="flower" class="h-11 w-11 text-sage-deep opacity-60" />
               </div>

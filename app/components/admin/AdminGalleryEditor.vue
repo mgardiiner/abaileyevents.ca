@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ArrowDown, ArrowUp, ChevronsDown, ChevronsUp, CircleAlert, ImagePlus, LoaderCircle, Star, Trash2, X } from 'lucide-vue-next'
-import { addPhoto, editor, notify, photoSize, photoUrl } from '~/admin/editor'
+import { ArrowDown, ArrowUp, ChevronsDown, ChevronsUp, CircleAlert, Crosshair, ImagePlus, LoaderCircle, Star, Trash2, X } from 'lucide-vue-next'
+import { addPhoto, chooseFocus, editor, focusStyle, notify, photoSize, photoUrl } from '~/admin/editor'
 import { UnsupportedPhotoError, folderLabel, slugify } from '~/admin/photos'
 import type { Field } from '~/admin/sections'
 
@@ -147,7 +147,10 @@ async function addPhotos() {
   if (upload.errors.length) return
   addDialog.value?.close()
   filter.value = 'all'
-  if (added.length) notify(`${added.length} photo${added.length === 1 ? '' : 's'} added at the top of the gallery. Click each one to describe it.`, { tone: 'success' })
+  if (!added.length) return
+  // Step through the new photos to choose what part of each one shows where it's trimmed.
+  await chooseFocus(added.map(shot => shot.src))
+  notify(`${added.length} photo${added.length === 1 ? '' : 's'} added at the top of the gallery. Click each one to describe it.`, { tone: 'success' })
 }
 </script>
 
@@ -182,7 +185,7 @@ async function addPhotos() {
       >
         <button type="button" class="block w-full text-left" @click="openShot(shot)">
           <span class="relative block aspect-square overflow-hidden rounded-lg bg-cream ring-1 ring-ink/10">
-            <img :src="photoUrl(shot.src)" :alt="shot.alt" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]">
+            <img :src="photoUrl(shot.src)" :alt="shot.alt" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" :style="focusStyle(shot.src)">
             <span class="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-[0.75rem] font-medium text-ink shadow-sm">{{ items.indexOf(shot) + 1 }}</span>
             <span v-if="isHighlight(shot)" class="absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-full bg-white/90 text-[#B08A3E] shadow-sm" title="On the Home page">
               <Star class="h-4 w-4 fill-current" aria-hidden="true" /><span class="sr-only">On the Home page</span>
@@ -229,6 +232,14 @@ async function addPhotos() {
               <span class="a-help">The Home page shows five gallery photos ({{ gallery.highlights.length }} chosen).</span>
             </span>
           </button>
+
+          <div class="grid gap-2">
+            <p class="a-label">What shows when it's trimmed</p>
+            <p class="a-help -mt-1">The gallery page shows the whole photo. Smaller spots, like the Home page, trim it to a shape.</p>
+            <button type="button" class="a-btn a-btn-quiet justify-self-start !px-4" @click="chooseFocus([selected.src])">
+              <Crosshair class="h-4 w-4" aria-hidden="true" /> Choose what shows
+            </button>
+          </div>
 
           <div class="grid gap-2">
             <p class="a-label">Position</p>

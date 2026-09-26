@@ -2,6 +2,7 @@ import about from '~/data/about.json'
 import comingSoon from '~/data/coming-soon.json'
 import contact from '~/data/contact.json'
 import faq from '~/data/faq.json'
+import focusData from '~/data/focus.json'
 import gallery from '~/data/gallery.json'
 import hero from '~/data/hero.json'
 import nav from '~/data/nav.json'
@@ -12,7 +13,9 @@ import testimonials from '~/data/testimonials.json'
 
 // Keyed by file name in app/data/. Every page reads its copy through useContent(), so the website
 // editor's preview can swap in unpublished changes.
-const files = { about, 'coming-soon': comingSoon, contact, faq, gallery, hero, nav, packages, rentals, services, testimonials }
+// Where each photo's subject sits, as [x, y] percentages keyed by photo path (see photoFocus).
+const focus: Record<string, [number, number]> = focusData
+const files = { about, 'coming-soon': comingSoon, contact, faq, focus, gallery, hero, nav, packages, rentals, services, testimonials }
 const content = reactive(files)
 
 export type ContentFiles = typeof files

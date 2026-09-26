@@ -45,7 +45,7 @@ onMounted(() => {
   <div class="min-h-dvh bg-ivory text-ink">
     <header class="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-ink/10 bg-white/95 px-4 backdrop-blur sm:px-6">
       <NuxtLink to="/admin" class="whitespace-nowrap font-serif text-[1.2rem] tracking-[0.04em] text-ink sm:text-[1.35rem]">
-        <b class="font-semibold">ABailey</b> Events <span class="text-sage">❀</span>
+        <b class="font-semibold">ABailey</b> Events <RoseMark class="inline-block h-[1.1em] w-[1.1em] align-[-0.16em] text-sage" :weight="1.4" />
       </NuxtLink>
       <span class="hidden rounded-full bg-sage-mist px-2.5 py-1 text-[0.72rem] font-medium uppercase tracking-[0.14em] text-sage-deep sm:inline">Website editor</span>
       <span v-if="editor.backend === 'local'" class="whitespace-nowrap rounded-full max-sm:hidden bg-[#FBF5E8] px-2.5 py-1 text-[0.72rem] font-medium uppercase tracking-[0.14em] text-[#8A6A2C]">Local files</span>
@@ -113,6 +113,7 @@ onMounted(() => {
       <AdminPublishBar />
       <AdminToasts />
       <AdminPhotoChooser />
+      <AdminFocusDialog />
     </template>
   </div>
 </template>

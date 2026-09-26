@@ -38,8 +38,9 @@ defineProps<{
         <li
           v-for="feature in pkg.features"
           :key="feature"
-          class="relative break-inside-avoid border-b border-ink/[0.07] py-2.5 pl-6 text-[0.9rem] leading-snug text-ink-soft before:absolute before:left-0 before:top-[11px] before:text-[0.7rem] before:text-sage before:content-['❀']"
+          class="relative break-inside-avoid border-b border-ink/[0.07] py-2.5 pl-6 text-[0.9rem] leading-snug text-ink-soft"
         >
+          <RoseMark class="absolute left-0 top-[11px] h-[0.95rem] w-[0.95rem] text-sage" :weight="1.8" />
           {{ feature }}
         </li>
       </ul>

@@ -29,10 +29,10 @@ const failed = reactive(new Set<string>())
         <div class="absolute -right-4 -top-4 h-full w-full border border-beige-deep/70" aria-hidden="true" />
         <div class="relative aspect-[4/5] overflow-hidden bg-cream">
           <PhotoPlaceholder v-if="failed.has(featured.photo)" :file="featured.photo" />
-          <img v-else :src="featured.photo" :alt="featured.photoAlt" loading="lazy" class="h-full w-full object-cover" @error="failed.add(featured.photo)">
+          <img v-else :src="featured.photo" :style="photoFocus(featured.photo)" :alt="featured.photoAlt" loading="lazy" class="h-full w-full object-cover" @error="failed.add(featured.photo)">
         </div>
         <div class="absolute -bottom-10 -left-6 hidden aspect-square w-[36%] overflow-hidden border-[6px] border-ivory bg-cream shadow-lift sm:block lg:-left-12">
-          <img v-if="!failed.has(featured.detail)" :src="featured.detail" :alt="featured.detailAlt" loading="lazy" class="h-full w-full object-cover" @error="failed.add(featured.detail)">
+          <img v-if="!failed.has(featured.detail)" :src="featured.detail" :style="photoFocus(featured.detail)" :alt="featured.detailAlt" loading="lazy" class="h-full w-full object-cover" @error="failed.add(featured.detail)">
         </div>
       </div>
     </div>

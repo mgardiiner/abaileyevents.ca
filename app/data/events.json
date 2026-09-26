@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Past Events",
+  "title": "Moments I've had the joy of making",
+  "intro": "A few favourites from recent weddings, bloom bars, and styled celebrations. See more (and say hi) on Instagram",
+  "items": [
+    {
+      "src": "/images/events/event-01.jpg",
+      "alt": "Fresh off the Market bloom bar with fringed umbrella, flower cart and tiered stem display",
+      "caption": "The Signature Bloom Bar",
+      "tint": 1
+    },
+    {
+      "src": "/images/events/event-02.jpg",
+      "alt": "Bride beneath a gold ceremony arch draped in sage chiffon and white floral rentals",
+      "caption": "Ceremony Arch & Floral Rentals",
+      "tint": 2
+    },
+    {
+      "src": "/images/events/event-03.jpg",
+      "alt": "Bride seated at a styled garden reception table with white florals and sage napkins",
+      "caption": "Styled Garden Reception",
+      "tint": 3
+    },
+    {
+      "src": "/images/events/event-04.jpg",
+      "alt": "Kids' birthday bloom bar with pink Happy Birthday arch and flower cart",
+      "caption": "Kids' Birthday Bloom Bar",
+      "tint": 3
+    },
+    {
+      "src": "/images/events/event-05.jpg",
+      "alt": "Bride and groom laughing on a white wedding bounce castle at sunset",
+      "caption": "M&A · A Fairytale Wedding",
+      "tint": 1
+    },
+    {
+      "src": "/images/events/event-06.jpg",
+      "alt": "Pastel market bouquet in a kraft paper wrap",
+      "caption": "Market Bouquets, Wrapped to Go",
+      "tint": 2
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "eyebrow": "About Me",
+  "heading": "Hi, I'm Ayla",
+  "scriptLine": "so glad you're here",
+  "portrait": "/images/ayla.jpg",
+  "portraitAlt": "Ayla Bailey, wedding planner and coordinator",
+  "paragraphs": [
+    "I'm a WPIC-certified wedding planner and coordinator based in Cookstown, Ontario — and a proud mom of three, which means I've been coordinating beautiful chaos for years.",
+    "Planning an event should feel exciting, not exhausting. My job is to take the logistics, the vendor wrangling, and the \"wait, who's bringing the...?\" moments off your plate, and to add the touches — like my signature bloom bar — that make your day unmistakably yours.",
+    "[Add a personal line here — how you got into weddings, what you love most about event days, or a fun fact or two.]"
+  ],
+  "facts": ["WPIC Certified", "Mom of 3", "Cookstown, ON", "[Fun fact]"],
+  "cta": "Work With Me"
+}

@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Kind Words",
+  "title": "From couples & clients",
+  "placeholder": true,
+  "note": "Placeholder quotes — swap in real reviews from the \"Reviews 🤍\" Instagram highlight.",
+  "items": [
+    {
+      "quote": "[Paste a favourite review from the Instagram Reviews highlight here — a line or two about the wedding day going smoothly.]",
+      "cite": "[Couple's names], [venue or town]"
+    },
+    {
+      "quote": "[A quote about the bloom bar — guests always rave about it, so lead with that here.]",
+      "cite": "[Client name], [event type]"
+    },
+    {
+      "quote": "[A quote about working with Ayla — calm, organized, made it stress-free.]",
+      "cite": "[Couple's names], [year]"
+    }
+  ]
+}

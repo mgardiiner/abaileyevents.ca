@@ -1,17 +1,30 @@
+import { createHash } from 'node:crypto'
+
+// Static builds bake runtime config into the client bundle, so ship only the
+// preview password's hash, never the password itself.
+const previewPassword = process.env.PREVIEW_PASSWORD ?? ''
+
 export default defineNuxtConfig({
   srcDir: 'app/',
   ssr: false,
   nitro: { preset: 'github-pages' },
   compatibilityDate: '2025-07-15',
+  // Off 3000 so this never shares a port with the Trend Hunter dev server.
+  devServer: { port: 3001 },
+  runtimeConfig: {
+    public: {
+      previewHash: previewPassword ? createHash('sha256').update(previewPassword).digest('hex') : '',
+    },
+  },
   app: {
     baseURL: '/',
     head: {
       htmlAttrs: { lang: 'en' },
-      title: 'A Bailey Events | Wedding Planning & Coordination',
+      title: 'ABailey Events — Wedding Planning, Bloom Bars & Event Rentals | Cookstown, Ontario',
       meta: [
         {
           name: 'description',
-          content: 'Wedding planning, day-of coordination, bloom bars and event rentals in Cookstown, Ontario. Let us make your special day stunning and stress free.',
+          content: 'ABailey Events — WPIC-certified wedding planning and coordination, bloom bar services, and event rentals in Cookstown, Barrie, Simcoe County and the GTA.',
         },
       ],
       link: [

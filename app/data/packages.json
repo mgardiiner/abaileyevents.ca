@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Packages",
+  "title": "Something for every celebration",
+  "intro": "Every event is different — these packages are the starting point, and we'll tailor everything to your day in a free consultation.",
+  "note": "*Sample pricing shown — every quote is tailored to your event. Reach out for exact numbers.",
+  "items": [
+    {
+      "name": "Full Planning",
+      "tag": "The whole journey",
+      "price": "$3,500",
+      "priceNote": "sample*",
+      "features": ["Planning from \"yes!\" to last dance", "Budget & vendor management", "Design & décor direction", "Unlimited check-ins", "Full day-of coordination"]
+    },
+    {
+      "name": "Day-of Coordination",
+      "tag": "You plan, I execute",
+      "price": "$1,200",
+      "priceNote": "sample*",
+      "featured": true,
+      "flag": "Most Popular",
+      "features": ["Timeline built together", "Vendor confirmations", "Rehearsal guidance", "On-site management all day", "Emergency kit on hand"]
+    },
+    {
+      "name": "Bloom Bar",
+      "tag": "The signature 💐",
+      "price": "$600",
+      "priceNote": "sample*",
+      "features": ["Styled fresh-flower bar", "Seasonal stem selection", "Wraps, tags & supplies", "Kids' birthday party package", "Setup & teardown included"]
+    },
+    {
+      "name": "Event Rentals",
+      "tag": "The finishing touches",
+      "price": "à la carte",
+      "features": ["Arches & backdrops", "Life-like faux floral packages", "Table décor & vessels", "Setup & styling included", "Bundle with any package"]
+    }
+  ]
+}

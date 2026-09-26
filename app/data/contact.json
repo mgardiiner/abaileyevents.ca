@@ -2,5 +2,10 @@
   "location": "Cookstown, Ontario",
   "instagram": "abaileyevents",
   "instagramUrl": "https://www.instagram.com/abaileyevents/",
-  "messageUrl": "https://ig.me/m/abaileyevents"
+  "messageUrl": "https://ig.me/m/abaileyevents",
+  "areas": ["Cookstown", "Barrie", "Simcoe County", "GTA & beyond"],
+  "scriptLine": "let's make it lovely",
+  "heading": "Tell me about your day",
+  "body": "Let us make your special day stunning and stress free. Every ABailey event starts with a friendly, no-pressure chat — send me a DM on Instagram with your date and what you're dreaming up, and I'll take it from there.",
+  "cta": "Message Me on Instagram"
 }

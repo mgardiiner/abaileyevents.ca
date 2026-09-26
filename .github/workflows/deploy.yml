@@ -33,6 +33,8 @@ jobs:
 
       - name: Build Nuxt (static)
         run: npm run generate
+        env:
+          PREVIEW_PASSWORD: ${{ secrets.PREVIEW_PASSWORD }}
 
       - name: Preserve custom domain
         run: cp CNAME .output/public/CNAME

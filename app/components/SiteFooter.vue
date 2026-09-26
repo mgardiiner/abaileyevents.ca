@@ -5,10 +5,9 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="bg-forest text-cream">
-    <div class="mx-auto flex max-w-6xl flex-col items-center gap-2 px-4 py-10 text-sm sm:flex-row sm:justify-between sm:px-6">
-      <p>&copy; {{ year }} A Bailey Events &middot; {{ contact.location }}</p>
-      <a :href="contact.instagramUrl" target="_blank" rel="noopener" class="hover:text-blush">@{{ contact.instagram }}</a>
-    </div>
+  <footer class="bg-forest px-6 py-11 text-center text-[0.8rem] text-cream/75">
+    <a href="#top" class="mb-3.5 inline-block font-serif text-2xl tracking-[0.06em] text-ivory"><b class="font-semibold">ABailey</b> Events ❀</a>
+    <p class="mb-[18px] text-[0.68rem] uppercase tracking-[0.2em]">{{ contact.areas.join(' · ') }}</p>
+    <p class="opacity-60">WPIC Certified Wedding Planner &amp; Coordinator · © {{ year }} ABailey Events</p>
   </footer>
 </template>

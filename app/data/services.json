@@ -1,0 +1,22 @@
+{
+  "eyebrow": "What I Do",
+  "title": "Three ways to make it beautiful",
+  "intro": "Whether you need a planner in your corner from day one, a stunning floral moment your guests will talk about, or just the perfect finishing pieces — I've got you.",
+  "items": [
+    {
+      "icon": "calendar",
+      "title": "Planning & Coordination",
+      "body": "From full-service planning to day-of coordination — timelines, vendors, logistics, and calm nerves. I sweat the details so you don't have to."
+    },
+    {
+      "icon": "flower",
+      "title": "Bloom Bar Services",
+      "body": "My signature 💐 — an interactive fresh-flower bar where your guests build their own bouquets. Part décor, part activity, all-around showstopper."
+    },
+    {
+      "icon": "rentals",
+      "title": "Event Rentals",
+      "body": "Curated décor and rental pieces — arches, signage, table settings, and the little touches that pull a whole look together."
+    }
+  ]
+}

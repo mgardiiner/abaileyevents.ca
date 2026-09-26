@@ -1,10 +1,14 @@
 html {
   scroll-behavior: smooth;
-  font-family: 'Jost', 'Helvetica Neue', sans-serif;
 }
 
 body {
   overflow-x: hidden;
+  background: #FAF6F0;
+  color: #33302B;
+  line-height: 1.7;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
 }
 
 #vue-tracer-overlay {
@@ -13,4 +17,114 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+/* Section eyebrow: small caps label flanked by hairlines */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #55624D;
+}
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: #7D8B74;
+}
+.eyebrow--light { color: #E8CFC4; }
+.eyebrow--light::before,
+.eyebrow--light::after { background: #E8CFC4; }
+
+/* Pill buttons */
+.btn {
+  display: inline-block;
+  padding: 15px 38px;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.btn-solid {
+  background: #3C4637;
+  color: #FAF6F0;
+  border: 1px solid #3C4637;
+}
+.btn-solid:hover {
+  background: #55624D;
+  border-color: #55624D;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(60, 70, 55, 0.25);
+}
+.btn-ghost {
+  border: 1px solid #3C4637;
+  color: #3C4637;
+}
+.btn-ghost:hover {
+  background: #3C4637;
+  color: #FAF6F0;
+  transform: translateY(-2px);
+}
+
+/* Soft colour washes */
+.bg-hero {
+  background:
+    radial-gradient(ellipse 60% 45% at 12% 8%, rgba(232, 207, 196, 0.55), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 88% 18%, rgba(125, 139, 116, 0.28), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 50% 105%, rgba(185, 154, 95, 0.16), transparent 65%),
+    #FAF6F0;
+}
+.bg-contact {
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 100%, rgba(232, 207, 196, 0.5), transparent 60%),
+    radial-gradient(ellipse 55% 55% at 90% 0%, rgba(125, 139, 116, 0.24), transparent 60%),
+    #FAF6F0;
+}
+
+/* Photo placeholder tints (shown when an image file is missing) */
+.ph-tint-1 {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(232, 207, 196, 0.6), transparent 65%),
+    radial-gradient(ellipse 70% 60% at 85% 90%, rgba(125, 139, 116, 0.35), transparent 65%),
+    #F3ECE2;
+}
+.ph-tint-2 {
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 12%, rgba(185, 154, 95, 0.35), transparent 65%),
+    radial-gradient(ellipse 70% 60% at 12% 88%, rgba(232, 207, 196, 0.65), transparent 65%),
+    #F3ECE2;
+}
+.ph-tint-3 {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(125, 139, 116, 0.4), transparent 70%),
+    radial-gradient(ellipse 70% 60% at 60% 100%, rgba(207, 162, 148, 0.5), transparent 65%),
+    #F3ECE2;
+}
+
+/* Scroll-in fade, toggled by the v-reveal directive (plugins/reveal.ts) */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

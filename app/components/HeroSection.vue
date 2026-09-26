@@ -1,22 +1,70 @@
 <script setup lang="ts">
 import hero from '~/data/hero.json'
+
+const kickerParts = hero.kicker.split(' · ')
+
+// Crossfade through the hero photos; visitors who prefer reduced motion keep the first.
+const current = ref(0)
+let timer: ReturnType<typeof setInterval> | undefined
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  timer = setInterval(() => {
+    current.value = (current.value + 1) % hero.slides.length
+  }, 5000)
+})
+onBeforeUnmount(() => clearInterval(timer))
 </script>
 
 <template>
-  <header id="top" class="bg-hero relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 pb-[90px] pt-[120px] text-center">
-    <BotanicalSprig class="pointer-events-none absolute -bottom-10 -left-[70px] w-[240px] rotate-[8deg] opacity-50 sm:w-[340px]" color="#7D8B74" />
-    <BotanicalSprig class="pointer-events-none absolute -right-[60px] top-[60px] w-[220px] -rotate-6 -scale-x-100 opacity-50 sm:w-[300px]" color="#CFA294" />
+  <header id="top" class="bg-hero relative overflow-hidden px-6 pb-24 pt-[112px] lg:flex lg:min-h-svh lg:items-center lg:pb-20 lg:pt-[104px]">
+    <BotanicalSprig class="pointer-events-none absolute -bottom-28 -left-[110px] w-[220px] rotate-[18deg] opacity-30 sm:w-[300px]" color="#7D8B74" />
 
-    <p class="relative mb-[22px] text-xs font-medium uppercase tracking-[0.34em] text-sage-deep">{{ hero.kicker }}</p>
-    <h1 class="relative mx-auto max-w-[14ch] text-[clamp(2.8rem,7.5vw,5.2rem)] text-forest">
-      {{ hero.title }} <em class="italic text-blush-deep">{{ hero.titleEmphasis }}</em>.
-    </h1>
-    <p class="relative mb-2 mt-5 font-script text-[clamp(1.6rem,3.4vw,2.4rem)] text-gold">{{ hero.scriptLine }}</p>
-    <p class="relative mx-auto mb-[38px] mt-2.5 max-w-[52ch] text-[1.05rem] text-ink-muted">{{ hero.sub }}</p>
-    <div class="relative flex flex-wrap justify-center gap-4">
-      <a class="btn btn-solid" href="#packages">View Packages</a>
-      <a class="btn btn-ghost" href="#contact">Let's Chat</a>
+    <div class="relative mx-auto grid w-full max-w-wrap items-center gap-16 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-20">
+      <div class="text-center lg:text-left">
+        <!-- Each part of the kicker gets its own line on phones instead of wrapping mid-phrase -->
+        <p class="mb-6 flex flex-col items-center gap-1.5 text-[0.7rem] font-medium uppercase tracking-[0.34em] text-sage-deep sm:flex-row sm:justify-center sm:gap-3 lg:justify-start">
+          <template v-for="(part, i) in kickerParts" :key="part">
+            <span v-if="i" class="hidden text-sage sm:inline" aria-hidden="true">·</span>
+            <span>{{ part }}</span>
+          </template>
+        </p>
+        <h1 class="text-[clamp(3.1rem,7vw,5.6rem)] font-light leading-[0.98] text-ink">
+          {{ hero.title }}
+          <em class="block font-light italic text-sage-deep">{{ hero.titleEmphasis }}</em>
+        </h1>
+        <p class="mt-5 font-script text-[clamp(1.7rem,3vw,2.3rem)] text-sage-deep">{{ hero.scriptLine }}</p>
+        <p class="mx-auto mb-10 mt-4 max-w-[46ch] text-[1.05rem] text-ink-muted lg:mx-0">{{ hero.sub }}</p>
+        <div class="flex flex-wrap justify-center gap-4 lg:justify-start">
+          <NuxtLink v-for="(cta, i) in hero.ctas" :key="cta.href" class="btn" :class="i === 0 ? 'btn-solid' : 'btn-ghost'" :to="cta.href">{{ cta.label }}</NuxtLink>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-[360px] sm:max-w-[420px]">
+        <div class="absolute -right-4 -top-4 h-full w-full rounded-t-full border border-beige-deep/70" aria-hidden="true" />
+        <div class="relative aspect-[4/5] overflow-hidden rounded-t-full bg-cream shadow-lift">
+          <img
+            v-for="(slide, i) in hero.slides"
+            :key="slide.src"
+            :src="slide.src"
+            :alt="slide.alt"
+            :aria-hidden="i !== current"
+            class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-in-out"
+            :class="i === current ? 'opacity-100' : 'opacity-0'"
+          >
+        </div>
+        <div class="absolute -bottom-9 -left-10 hidden h-[150px] w-[150px] overflow-hidden rounded-full border-[6px] border-ivory shadow-lift sm:block">
+          <img :src="hero.accent.src" :alt="hero.accent.alt" class="h-full w-full object-cover">
+        </div>
+        <div class="absolute -bottom-4 right-2 flex gap-2" aria-hidden="true">
+          <span
+            v-for="(slide, i) in hero.slides"
+            :key="slide.src"
+            class="h-1.5 w-1.5 rounded-full transition-colors duration-500"
+            :class="i === current ? 'bg-sage-deep' : 'bg-sage/30'"
+          />
+        </div>
+      </div>
     </div>
-    <a href="#services" class="absolute inset-x-0 bottom-[26px] mx-auto w-max text-[0.68rem] uppercase tracking-[0.3em] text-sage-deep motion-safe:animate-bob">Scroll ↓</a>
   </header>
 </template>

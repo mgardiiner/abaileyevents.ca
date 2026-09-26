@@ -1,11 +1,11 @@
 <script setup lang="ts">
-defineProps<{ eyebrow: string; title: string; intro?: string; dark?: boolean }>()
+defineProps<{ eyebrow: string; title: string; intro?: string }>()
 </script>
 
 <template>
   <div v-reveal class="mx-auto max-w-wrap text-center">
-    <span class="eyebrow" :class="{ 'eyebrow--light': dark }">{{ eyebrow }}</span>
-    <h2 class="mb-[18px] mt-3.5 text-[clamp(2rem,4.5vw,3rem)]" :class="dark ? 'text-ivory' : 'text-forest'">{{ title }}</h2>
+    <span class="eyebrow">{{ eyebrow }}</span>
+    <h2 class="mb-5 mt-4 text-[clamp(2.3rem,4.8vw,3.4rem)] font-light leading-[1.05] text-ink">{{ title }}</h2>
     <p v-if="intro" class="mx-auto max-w-[56ch] text-ink-muted">
       {{ intro }}
       <slot />

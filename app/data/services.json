@@ -1,22 +1,82 @@
 {
-  "eyebrow": "What I Do",
-  "title": "Three ways to make it beautiful",
-  "intro": "Whether you need a planner in your corner from day one, a stunning floral moment your guests will talk about, or just the perfect finishing pieces — I've got you.",
-  "items": [
+  "seo": {
+    "title": "Event Planning & Wedding Packages | ABailey Events",
+    "description": "Month-of wedding coordination from $800, full wedding planning from $1,500, and our signature Bloom Bar for weddings, bridal showers, birthdays and corporate events across Simcoe Muskoka."
+  },
+  "eyebrow": "What We Do",
+  "title": "From the little details to the big moments",
+  "intro": "ABailey Events is a creative event and wedding planning business dedicated to bringing beautiful celebrations to life — stylish, personal, and seamless from start to finish.",
+  "offerings": [
     {
-      "icon": "calendar",
-      "title": "Planning & Coordination",
-      "body": "From full-service planning to day-of coordination — timelines, vendors, logistics, and calm nerves. I sweat the details so you don't have to."
+      "title": "Wedding Planning & Coordination",
+      "summary": "A planner by your side from the very first idea, or a coordinator to take the reins in the final month.",
+      "meta": "Packages from $800",
+      "photo": "/images/gallery/em-wedding/bride-under-the-willow.jpg",
+      "photoAlt": "Bride beneath a willow tree with her long veil trailing on the grass",
+      "cta": "Planning & Packages",
+      "href": "/event-planning"
     },
     {
-      "icon": "flower",
       "title": "Bloom Bar Services",
-      "body": "My signature 💐 — an interactive fresh-flower bar where your guests build their own bouquets. Part décor, part activity, all-around showstopper."
+      "summary": "An interactive fresh-flower bar where your guests build their own bouquets to take home.",
+      "meta": "Custom quotes",
+      "photo": "/images/gallery/bloom-bar/gathering-stems.jpg",
+      "photoAlt": "Gathering a handful of fresh stems at the Bloom Bar",
+      "cta": "About the Bloom Bar",
+      "href": "/event-planning#bloom-bar"
     },
     {
-      "icon": "rentals",
-      "title": "Event Rentals",
-      "body": "Curated décor and rental pieces — arches, signage, table settings, and the little touches that pull a whole look together."
+      "title": "Décor Rentals",
+      "summary": "Soft white florals, candlelight and sage green drapery to pull your whole look together.",
+      "meta": "Package $400",
+      "photo": "/images/rentals/elegant-timeless/styled-tablescape.jpg",
+      "photoAlt": "Styled table with white florals and candlesticks from our décor rentals",
+      "cta": "Browse Rentals",
+      "href": "/decor-rentals"
     }
-  ]
+  ],
+  "page": {
+    "eyebrow": "Event Planning",
+    "title": "Every detail,",
+    "emphasis": "thoughtfully planned",
+    "intro": "Wedding planning and coordination is our specialty, and our signature Bloom Bar brings something special to showers, birthdays and corporate events too.",
+    "photo": "/images/gallery/jm-wedding/ring-exchange.jpg",
+    "photoAlt": "Ring exchange beneath a wooden ceremony arch draped in white fabric and florals",
+    "sections": [
+      { "id": "wedding-planning", "label": "Wedding Planning" },
+      { "id": "packages", "label": "Packages" },
+      { "id": "bloom-bar", "label": "Bloom Bar" }
+    ]
+  },
+  "featured": {
+    "tag": "Our Specialty",
+    "title": "Wedding Planning & Coordination",
+    "photo": "/images/gallery/em-wedding/pergola-ceremony.jpg",
+    "photoAlt": "Garden wedding ceremony beneath a white pergola dressed with white florals",
+    "detail": "/images/gallery/jm-wedding/bouquet-keepsake-charm.jpg",
+    "detailAlt": "Close-up of a white bouquet with a keepsake charm wrapped around the stems",
+    "body": [
+      "Your wedding day should feel as beautiful as it looks. Whether you'd like a planner by your side from the very first idea, or a coordinator to take the reins in the final month, ABailey Events manages the vendors, timelines and logistics with calm, organized care.",
+      "We handle the details behind the scenes, so you can relax, be present, and enjoy every moment with the people you love."
+    ],
+    "cta": "Compare Packages"
+  },
+  "bloomBar": {
+    "tag": "Our Signature Experience",
+    "title": "Bloom Bar Services",
+    "photo": "/images/gallery/bloom-bar/garden-bloom-bar.jpg",
+    "photoAlt": "Garden Bloom Bar with a white floral arch, flower cart, fringed umbrella and tiered buckets of fresh flowers",
+    "detail": "/images/gallery/kids-birthday-bloom-bar/wrapping-help.jpg",
+    "detailAlt": "Girl getting help wrapping her bouquet",
+    "body": [
+      "Our signature Bloom Bar is an interactive floral experience your guests will love. We style a beautiful fresh-flower bar where guests build their own bouquets to take home — part décor, part activity, and a keepsake from your celebration.",
+      "We bring the flowers, the styled bar and a wrapping station, and help each guest put together a bouquet they'll love."
+    ],
+    "perfectForLabel": "Perfect for",
+    "perfectFor": ["Weddings", "Bridal Showers", "Birthdays", "Corporate Events"],
+    "cta": "Request a Bloom Bar Quote",
+    "galleryCta": "See Our Bloom Bars"
+  },
+  "also": "Planning a bridal shower, birthday or corporate event? We'd love to help with that too.",
+  "alsoCta": "Tell us about your event"
 }

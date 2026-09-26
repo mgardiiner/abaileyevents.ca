@@ -11,6 +11,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   // Off 3000 so this never shares a port with the Trend Hunter dev server.
   devServer: { port: 3001 },
+  // Glide to #anchors like #packages; page changes still jump straight to the top.
+  router: { options: { scrollBehaviorType: 'smooth' } },
   runtimeConfig: {
     public: {
       previewHash: previewPassword ? createHash('sha256').update(previewPassword).digest('hex') : '',
@@ -20,11 +22,11 @@ export default defineNuxtConfig({
     baseURL: '/',
     head: {
       htmlAttrs: { lang: 'en' },
-      title: 'ABailey Events — Wedding Planning, Bloom Bars & Event Rentals | Cookstown, Ontario',
+      title: 'ABailey Events — Wedding Planning, Bloom Bar & Décor Rentals | Simcoe Muskoka',
       meta: [
         {
           name: 'description',
-          content: 'ABailey Events — WPIC-certified wedding planning and coordination, bloom bar services, and event rentals in Cookstown, Barrie, Simcoe County and the GTA.',
+          content: 'ABailey Events — wedding planning and coordination, Bloom Bar services and décor rentals across Simcoe Muskoka. From vision to celebration, making your moments bloom.',
         },
       ],
       link: [
@@ -33,7 +35,7 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap',
         },
       ],
     },

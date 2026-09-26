@@ -1,12 +1,17 @@
+<script setup lang="ts">
+import hero from '~/data/hero.json'
+
+usePageSeo(hero.seo)
+</script>
+
 <template>
   <div>
     <HeroSection />
     <TrustStrip />
     <ServicesSection />
-    <PackagesSection />
-    <EventsGallery />
-    <AboutSection />
+    <GalleryHighlights />
     <KindWords />
-    <ContactSection />
+    <AboutTeaser />
+    <CtaBand />
   </div>
 </template>

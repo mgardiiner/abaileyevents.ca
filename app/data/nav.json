@@ -1,0 +1,7 @@
+[
+  { "to": "/about", "label": "About" },
+  { "to": "/event-planning", "label": "Event Planning" },
+  { "to": "/decor-rentals", "label": "Décor Rentals" },
+  { "to": "/gallery", "label": "Gallery" },
+  { "to": "/faq", "label": "FAQ" }
+]

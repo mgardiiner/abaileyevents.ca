@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "Gallery — Weddings, Bloom Bars & Celebrations | ABailey Events",
+    "description": "Weddings, Bloom Bars, birthdays, corporate events and décor rentals planned and styled by ABailey Events across Simcoe Muskoka."
+  },
+  "eyebrow": "Gallery",
+  "title": "Moments we've had",
+  "emphasis": "the joy of making",
+  "homeTitle": "Moments we've had the joy of making",
+  "homeCta": "View the Full Gallery",
+  "highlights": [
+    "/images/gallery/jm-wedding/veil-kiss.jpg",
+    "/images/gallery/corporate-bloom-bar/fresh-off-the-market-bar.jpg",
+    "/images/gallery/em-wedding/sweetheart-table.jpg",
+    "/images/gallery/bloom-bar/wrapped-bouquets.jpg",
+    "/images/gallery/jm-wedding/lantern-centrepiece.jpg"
+  ],
+  "intro": "A few favourites from recent weddings, Bloom Bars and celebrations. See more (and say hi) on Instagram",
+  "pageSize": 18,
+  "categories": [
+    { "id": "weddings", "label": "Weddings" },
+    { "id": "bloom-bar", "label": "Bloom Bars" },
+    { "id": "bridal-showers", "label": "Bridal Showers" },
+    { "id": "birthdays", "label": "Birthdays" },
+    { "id": "corporate", "label": "Corporate Events" },
+    { "id": "rentals", "label": "Décor Rentals" }
+  ],
+  "items": [
+    { "src": "/images/gallery/ma-wedding/sunset-veil-kiss.jpg", "w": 964, "h": 1425, "alt": "Bride and groom kissing at golden hour outside a barn, her long veil flowing in the breeze", "caption": "M & A · Golden Hour", "categories": ["weddings"] },
+    { "src": "/images/gallery/bloom-bar/garden-bloom-bar.jpg", "w": 1067, "h": 1600, "alt": "Garden Bloom Bar with a white floral arch, flower cart, fringed umbrella and tiered buckets of fresh flowers", "caption": "The Signature Bloom Bar", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/em-wedding/pergola-ceremony.jpg", "w": 1024, "h": 1536, "alt": "Garden wedding ceremony beneath a white pergola dressed with white florals", "caption": "E & M · Garden Ceremony", "credit": "Bee Cohen", "categories": ["weddings"] },
+    { "src": "/images/gallery/kids-birthday-bloom-bar/choosing-stems.jpg", "w": 1067, "h": 1600, "alt": "Young girl in a white dress choosing flowers from the tiered Bloom Bar under a fringed umbrella", "caption": "Kids' Birthday Bloom Bar", "categories": ["birthdays", "bloom-bar"] },
+    { "src": "/images/gallery/ma-wedding/barn-floral-arch.jpg", "w": 1067, "h": 1600, "alt": "Barn ceremony stage with a white rose and greenery floral arch and string lights", "caption": "M & A · Barn Ceremony Arch", "categories": ["weddings"] },
+    { "src": "/images/gallery/corporate-bloom-bar/fresh-off-the-market-bar.jpg", "w": 1200, "h": 1600, "alt": "Fresh off the Market Bloom Bar with a white flower cart and tiered buckets of fresh flowers inside a studio", "caption": "Corporate Bloom Bar", "categories": ["corporate", "bloom-bar"] },
+    { "src": "/images/gallery/jm-wedding/veil-kiss.jpg", "w": 1125, "h": 1432, "alt": "Bride and groom kissing beneath her pearl-dotted veil", "caption": "J & M · Under the Veil", "credit": "Heather Hugo Photography", "categories": ["weddings"] },
+    { "src": "/images/rentals/elegant-timeless/arch-with-sage-drapery.jpg", "w": 1067, "h": 1600, "alt": "Bride beneath a gold arch with sage green drapery and white floral pieces from the Elegant & Timeless Rental Package", "caption": "Elegant & Timeless Rental Package", "categories": ["rentals"] },
+    { "src": "/images/gallery/em-wedding/sweetheart-table.jpg", "w": 1024, "h": 1460, "alt": "Couple at their sweetheart table beneath a white floral garland in a bright reception hall", "caption": "E & M · Sweetheart Table", "credit": "Bee Cohen", "categories": ["weddings"] },
+    { "src": "/images/gallery/bloom-bar/wrapped-bouquets.jpg", "w": 1600, "h": 1067, "alt": "Bouquets wrapped in kraft paper resting on the white Bloom Bar cart", "caption": "Bouquets, Wrapped to Go", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/ma-wedding/bounce-castle.jpg", "w": 1067, "h": 1600, "alt": "Bride and groom playing on a white wedding bounce castle", "caption": "M & A · A Fairytale Wedding", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/lantern-centrepiece.jpg", "w": 1065, "h": 1600, "alt": "Gold geometric lantern centrepiece with a candle, blush roses and greenery", "caption": "J & M · Reception Details", "categories": ["weddings"] },
+
+    { "src": "/images/gallery/ma-wedding/barn-ceremony-bw.jpg", "w": 1125, "h": 1109, "alt": "Black-and-white view of a barn ceremony with chandeliers and a floral arch", "caption": "M & A · The Ceremony", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/vows-and-rings-flat-lay.jpg", "w": 1600, "h": 1067, "alt": "Vow book, wedding rings, bridal shoes and lavender and white roses laid out on wood", "caption": "M & A · Vows & Rings", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/barn-aisle-pews.jpg", "w": 1067, "h": 1600, "alt": "Barn ceremony aisle lined with wooden pews, chandeliers and white floral arrangements", "caption": "M & A · The Aisle", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/couple-in-the-barn.jpg", "w": 1067, "h": 1600, "alt": "Bride and groom seated together inside a rustic barn", "caption": "M & A · Barn Portraits", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/horse-drawn-carriage.jpg", "w": 1600, "h": 1067, "alt": "Bride and groom beside a white horse-drawn carriage", "caption": "M & A · Carriage Arrival", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/ring-bearer-at-the-arch.jpg", "w": 1067, "h": 1600, "alt": "Bride and groom at the barn floral arch with their young ring bearer", "caption": "M & A · The Ring Bearer", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/couple-lifted-on-chairs.jpg", "w": 1600, "h": 1067, "alt": "Bride and groom lifted on chairs by their guests, reaching for each other under the reception tent", "caption": "M & A · Lifted Up", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/bride-lifted-on-chair.jpg", "w": 1600, "h": 1067, "alt": "Bride laughing as guests lift her on a chair under the reception tent", "caption": "M & A · Pure Joy", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/groom-lifted-by-guests.jpg", "w": 1600, "h": 1067, "alt": "Groom lifted into the air by guests under the reception tent", "caption": "M & A · Reception Fun", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/bride-lifted-by-guests.jpg", "w": 1600, "h": 1067, "alt": "Bride lifted by guests with her gown flying under the reception tent", "caption": "M & A · Reception Fun", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/bride-lifted-bw.jpg", "w": 1600, "h": 1067, "alt": "Black-and-white photo of the bride lifted above cheering guests", "caption": "M & A · Celebration", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/mechanical-bull.jpg", "w": 1067, "h": 1600, "alt": "Bride riding a mechanical bull in the reception tent", "caption": "M & A · Mechanical Bull", "categories": ["weddings"] },
+    { "src": "/images/gallery/ma-wedding/mechanical-bull-bw.jpg", "w": 1600, "h": 1067, "alt": "Black-and-white photo of the bride on a mechanical bull with one arm raised", "caption": "M & A · Mechanical Bull", "categories": ["weddings"] },
+
+    { "src": "/images/gallery/em-wedding/to-my-husband-card.jpg", "w": 1225, "h": 1600, "alt": "Card for the groom on the wedding day, surrounded by white florals and bridal shoes", "caption": "E & M · Getting Ready", "credit": "Bee Cohen", "categories": ["weddings"] },
+    { "src": "/images/gallery/em-wedding/bride-under-the-willow.jpg", "w": 1024, "h": 1537, "alt": "Bride beneath a willow tree with her long veil trailing on the grass", "caption": "E & M · Bridal Portrait", "credit": "Bee Cohen", "categories": ["weddings"] },
+    { "src": "/images/gallery/em-wedding/lakeside-ceremony.jpg", "w": 1024, "h": 1536, "alt": "Lakeside wedding ceremony with guests seated in white chairs", "caption": "E & M · Lakeside Ceremony", "credit": "Bee Cohen", "categories": ["weddings"] },
+    { "src": "/images/gallery/em-wedding/cake-cutting.jpg", "w": 1024, "h": 1532, "alt": "Bride and groom cutting a white tiered wedding cake", "caption": "E & M · Cake Cutting", "credit": "Bee Cohen", "categories": ["weddings"] },
+    { "src": "/images/gallery/em-wedding/first-dance.jpg", "w": 1024, "h": 679, "alt": "Couple sharing their first dance in front of the floral sweetheart table", "caption": "E & M · First Dance", "credit": "Bee Cohen", "categories": ["weddings"] },
+
+    { "src": "/images/gallery/jm-wedding/stone-steps.jpg", "w": 1080, "h": 803, "alt": "Groom dipping the bride on stone steps outside a historic stone building", "caption": "J & M · Portraits", "credit": "Heather Hugo Photography", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/ring-exchange.jpg", "w": 1125, "h": 772, "alt": "Ring exchange beneath a wooden ceremony arch draped in white fabric and florals", "caption": "J & M · Ring Exchange", "credit": "Heather Hugo Photography", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/bouquet-keepsake-charm.jpg", "w": 720, "h": 1082, "alt": "Close-up of a white bouquet with a keepsake charm wrapped around the stems", "caption": "J & M · The Bouquet", "credit": "Heather Hugo Photography", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/live-portrait-artist.jpg", "w": 1064, "h": 1600, "alt": "Live portrait artist sketching the couple at the reception", "caption": "J & M · Live Portrait Artist", "credit": "Heather Hugo Photography", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/welcome-sign.jpg", "w": 1065, "h": 1600, "alt": "\"With my whole heart\" welcome sign beside blush and white florals on a gold stand", "caption": "J & M · Welcome Sign", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/reception-centrepieces.jpg", "w": 1065, "h": 1600, "alt": "Reception tables with tall gold centrepiece stands and white and blush florals", "caption": "J & M · Reception", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/shoes-and-rings.jpg", "w": 1600, "h": 1065, "alt": "Bridal heels, ring box and white roses laid out on a veil", "caption": "J & M · Bridal Details", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/bouquet-by-the-window.jpg", "w": 1065, "h": 1600, "alt": "White and blush rose bouquet resting by a window", "caption": "J & M · The Bouquet", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/guest-book-table.jpg", "w": 1065, "h": 1600, "alt": "Guest book table with an acrylic sign, blush rose and instant camera", "caption": "J & M · Guest Book", "categories": ["weddings"] },
+    { "src": "/images/gallery/jm-wedding/mirror-seating-chart.jpg", "w": 1065, "h": 1600, "alt": "Gold-framed mirror seating chart at the reception entrance", "caption": "J & M · Seating Chart", "categories": ["weddings"] },
+
+    { "src": "/images/gallery/kids-birthday-bloom-bar/birthday-girl-gold-arch.jpg", "w": 1067, "h": 1600, "alt": "Birthday girl holding her bouquet beneath a gold arch in front of a green hedge", "caption": "Birthday Bloom Bar · The Birthday Girl", "categories": ["birthdays", "bloom-bar"] },
+    { "src": "/images/gallery/kids-birthday-bloom-bar/ribbon-station.jpg", "w": 1067, "h": 1600, "alt": "Girl choosing ribbon at the white Bloom Bar cart beneath a fringed umbrella", "caption": "Birthday Bloom Bar · Ribbon Station", "categories": ["birthdays", "bloom-bar"] },
+    { "src": "/images/gallery/kids-birthday-bloom-bar/cutting-ribbon.jpg", "w": 1067, "h": 1600, "alt": "Girl cutting pink ribbon at the Bloom Bar wrapping station", "caption": "Birthday Bloom Bar · Wrapping Station", "categories": ["birthdays", "bloom-bar"] },
+    { "src": "/images/gallery/kids-birthday-bloom-bar/smelling-her-bouquet.jpg", "w": 1067, "h": 1600, "alt": "Girl smelling her freshly made bouquet in the garden", "caption": "Birthday Bloom Bar · Stop & Smell", "categories": ["birthdays", "bloom-bar"] },
+    { "src": "/images/gallery/kids-birthday-bloom-bar/wrapping-help.jpg", "w": 1067, "h": 1600, "alt": "Girl getting help wrapping her bouquet", "caption": "Birthday Bloom Bar · A Helping Hand", "categories": ["birthdays", "bloom-bar"] },
+    { "src": "/images/gallery/kids-birthday-bloom-bar/kraft-paper-wrap.jpg", "w": 1067, "h": 1600, "alt": "Close-up of a bouquet being wrapped in kraft paper", "caption": "Birthday Bloom Bar · Kraft Paper Wraps", "categories": ["birthdays", "bloom-bar"] },
+    { "src": "/images/gallery/kids-birthday-bloom-bar/choosing-stems-bw.jpg", "w": 1067, "h": 1600, "alt": "Black-and-white photo of a girl picking stems from the flower cart", "caption": "Birthday Bloom Bar · Picking Stems", "categories": ["birthdays", "bloom-bar"] },
+
+    { "src": "/images/gallery/corporate-bloom-bar/meet-me-at-the-alcove.jpg", "w": 1600, "h": 1200, "alt": "\"Meet me at The Alcove\" neon sign with a kraft-wrapped Bloom Bar bouquet held up beside it", "caption": "Corporate Bloom Bar · The Alcove", "categories": ["corporate", "bloom-bar"] },
+    { "src": "/images/gallery/corporate-bloom-bar/wrapped-bouquet.jpg", "w": 1200, "h": 1600, "alt": "Kraft-wrapped bouquet of fresh flowers and greenery at the corporate Bloom Bar", "caption": "Corporate Bloom Bar · Wrapped to Go", "categories": ["corporate", "bloom-bar"] },
+    { "src": "/images/gallery/corporate-bloom-bar/studio-bloom-bar.jpg", "w": 1200, "h": 1600, "alt": "Bloom Bar bouquet on a table in a bright studio with fresh flowers and greenery", "caption": "Corporate Bloom Bar · Studio Setup", "categories": ["corporate", "bloom-bar"] },
+    { "src": "/images/gallery/corporate-bloom-bar/flower-cart.jpg", "w": 1200, "h": 1600, "alt": "White flower cart and tiered buckets of fresh flowers in front of a Fresh off the Market arch", "caption": "Corporate Bloom Bar · The Flower Cart", "categories": ["corporate", "bloom-bar"] },
+
+    { "src": "/images/gallery/bloom-bar/garden-bloom-bar-wide.jpg", "w": 1067, "h": 1600, "alt": "Wide view of the garden Bloom Bar with arch, flower cart and umbrella against a green hedge", "caption": "Garden Bloom Bar", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/bloom-bar/blush-and-white-blooms.jpg", "w": 1067, "h": 1600, "alt": "Blush and white roses and hydrangeas in white Bloom Bar buckets", "caption": "Fresh Blush & White Blooms", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/bloom-bar/fresh-off-the-market-arch.jpg", "w": 1067, "h": 1600, "alt": "Fresh off the Market arch sign with a cascade of white florals above the wrapping station", "caption": "Fresh off the Market", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/bloom-bar/choosing-stems.jpg", "w": 1067, "h": 1600, "alt": "Choosing stems from the tiered Bloom Bar beneath a fringed umbrella", "caption": "Choosing Stems", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/bloom-bar/gathering-stems.jpg", "w": 1067, "h": 1600, "alt": "Gathering a handful of fresh stems at the Bloom Bar", "caption": "Build Your Bouquet", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/bloom-bar/bloom-bar-in-action.jpg", "w": 1067, "h": 1600, "alt": "Ayla styling the garden Bloom Bar", "caption": "The Bloom Bar in Action", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/bloom-bar/wrapping-station.jpg", "w": 1067, "h": 1600, "alt": "Bouquet being arranged at the wrapping station in front of the Fresh off the Market arch", "caption": "The Wrapping Station", "categories": ["bloom-bar"] },
+    { "src": "/images/gallery/bloom-bar/arch-and-roses.jpg", "w": 1067, "h": 1600, "alt": "Blush roses in front of the white floral Bloom Bar arch", "caption": "Blush Roses & Florals", "categories": ["bloom-bar"] },
+
+    { "src": "/images/rentals/elegant-timeless/arch-with-sage-drapery-wide.jpg", "w": 1067, "h": 1600, "alt": "Gold ceremony arch with sage green drapery, white floral pieces and ground florals", "caption": "Elegant & Timeless · Ceremony Arch", "categories": ["rentals"] },
+    { "src": "/images/rentals/elegant-timeless/styled-tablescape.jpg", "w": 1067, "h": 1600, "alt": "Bride seated at a styled table with white florals and candlesticks", "caption": "Elegant & Timeless · Tablescape", "categories": ["rentals"] }
+  ]
+}

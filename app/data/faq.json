@@ -1,0 +1,66 @@
+{
+  "seo": {
+    "title": "FAQ | ABailey Events",
+    "description": "Answers about wedding planning, booking, custom quotes and décor rentals — delivery, pickup, setup, rental periods and deposits — across Simcoe Muskoka."
+  },
+  "eyebrow": "FAQ",
+  "title": "Good to know",
+  "intro": "A few answers to the questions we hear most. Don't see yours? Just ask — we're always happy to help.",
+  "allCta": "See All FAQs",
+  "groups": [
+    {
+      "id": "planning",
+      "title": "Planning & Booking",
+      "heading": "Planning questions",
+      "items": [
+        {
+          "q": "What areas do you serve?",
+          "a": "We plan and coordinate weddings and events throughout Simcoe Muskoka."
+        },
+        {
+          "q": "What types of events do you plan?",
+          "a": "Weddings are our specialty, and we also plan bridal showers, birthdays and corporate events. Our Bloom Bar is a beautiful addition to celebrations of every kind."
+        },
+        {
+          "q": "What's the difference between Month-of Coordination and Full Planning?",
+          "a": "Month-of Coordination is for couples who have planned their wedding and want a professional to take over in the final month and on the day itself. Full Planning supports you from your very first consultation through to the last dance, including venue research, vendor booking, décor and design planning, and full wedding day coordination."
+        },
+        {
+          "q": "Do you offer custom quotes?",
+          "a": "Yes. Every celebration is different, so we're happy to put together a custom quote for your event."
+        },
+        {
+          "q": "How do I book?",
+          "a": "Send us a consultation request through our contact page, email us, or message us on Instagram — whichever is easiest for you."
+        }
+      ]
+    },
+    {
+      "id": "rentals",
+      "title": "Décor Rentals",
+      "heading": "Rental questions",
+      "items": [
+        {
+          "q": "Do you deliver rental items?",
+          "a": "Yes, we deliver throughout Simcoe Muskoka. A delivery fee applies and is based on your event location."
+        },
+        {
+          "q": "Can I pick up rentals myself?",
+          "a": "Yes, pickup is available."
+        },
+        {
+          "q": "Do you offer setup and teardown?",
+          "a": "Yes, we offer both. With the Elegant & Timeless Rental Package, setup is included and takedown is available for an additional fee."
+        },
+        {
+          "q": "How long is the rental period?",
+          "a": "Our typical rental period is 2 days."
+        },
+        {
+          "q": "Is a damage deposit required?",
+          "a": "Yes, a security deposit is required on rentals. All rental terms are outlined in your rental contract."
+        }
+      ]
+    }
+  ]
+}

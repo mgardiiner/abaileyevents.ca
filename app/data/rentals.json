@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": "Décor Rentals in Simcoe Muskoka | ABailey Events",
+    "description": "Wedding and event décor rentals in soft whites and sage greens. The Elegant & Timeless Rental Package is $400 with setup included, and delivery is available across Simcoe Muskoka."
+  },
+  "eyebrow": "Décor Rentals",
+  "title": "The finishing",
+  "emphasis": "touches",
+  "intro": "Our décor rentals are curated in soft whites and sage greens for timeless, romantic celebrations. Book the complete package, or ask about individual pieces to mix and match with your own.",
+  "photos": [
+    { "src": "/images/rentals/elegant-timeless/arch-with-sage-drapery.jpg", "alt": "Gold arch with sage green drapery and white floral pieces from the Elegant & Timeless Rental Package" },
+    { "src": "/images/rentals/elegant-timeless/styled-tablescape.jpg", "alt": "Styled table with white florals and candlesticks from the Elegant & Timeless Rental Package" }
+  ],
+  "package": {
+    "tag": "Rental Package",
+    "name": "The Elegant & Timeless Rental Package",
+    "price": "$400",
+    "summary": "A coordinated collection of white florals, candlelight and sage green drapery to style your ceremony and reception, with setup included.",
+    "features": [
+      "White faux floral centrepieces for 10 tables",
+      "10 table numbers",
+      "Flameless green candlesticks and holders",
+      "Sage green arch drapery",
+      "3 white floral pieces to attach to the arch",
+      "2 white flower urns with white faux flowers",
+      "2 white faux floral ground arrangements",
+      "\"Welcome to our wedding\" mirror"
+    ],
+    "terms": [
+      "Setup included",
+      "Delivery fee based on your location",
+      "Takedown available for an additional fee"
+    ],
+    "cta": "Reserve This Package"
+  },
+  "steps": {
+    "eyebrow": "How Renting Works",
+    "title": "Simple from start to finish",
+    "items": [
+      { "title": "Choose your pieces", "body": "Reserve the Elegant & Timeless package, or tell us which individual pieces you'd like." },
+      { "title": "Delivery or pickup", "body": "We deliver throughout Simcoe Muskoka, with a fee based on your location. Pickup is available too." },
+      { "title": "Set up for you", "body": "Setup is included with the package. Takedown is available for an additional fee." },
+      { "title": "Two-day rental", "body": "Rentals are for 2 days. A damage deposit is required, and every term is in your rental contract." }
+    ]
+  },
+  "itemsTitle": "Individual Rentals",
+  "items": [],
+  "itemsNote": "Our full rental collection is being photographed and added here. Looking for a specific piece? Ask us and we'll put together a quote.",
+  "cta": "Request a Rental Quote",
+  "faqCta": "Rental FAQ"
+}

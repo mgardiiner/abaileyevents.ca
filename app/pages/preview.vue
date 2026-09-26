@@ -27,11 +27,11 @@ async function unlock() {
 
 <template>
   <main class="bg-hero flex min-h-svh flex-col items-center justify-center px-6 py-[90px] text-center text-ink">
-    <p class="mb-10 font-serif text-[1.5rem] tracking-[0.06em] text-forest">
-      <b class="font-semibold">ABailey</b> Events <span class="text-blush-deep">❀</span>
+    <p class="mb-10 font-serif text-[1.5rem] tracking-[0.06em] text-ink">
+      <b class="font-semibold">ABailey</b> Events <span class="text-sage">❀</span>
     </p>
-    <h1 class="text-[clamp(2.4rem,6vw,3.6rem)] text-forest">
-      Site <em class="italic text-blush-deep">preview</em>.
+    <h1 class="text-[clamp(2.4rem,6vw,3.6rem)] text-ink">
+      Site <em class="italic text-sage">preview</em>.
     </h1>
     <p class="mb-8 mt-3 text-[1.05rem] text-ink-muted">Enter the password to see the full site.</p>
 
@@ -43,10 +43,10 @@ async function unlock() {
         aria-label="Password"
         autocomplete="current-password"
         required
-        class="min-w-0 flex-1 rounded-full border border-forest/30 bg-ivory/70 px-6 py-[13px] text-forest placeholder:text-ink-faint focus:border-forest focus:outline-none"
+        class="min-w-0 flex-1 rounded-full border border-ink/20 bg-ivory/70 px-6 py-[13px] text-ink placeholder:text-ink-faint focus:border-sage-deep focus:outline-none"
       >
       <button type="submit" class="btn btn-solid">View Site</button>
     </form>
-    <p v-if="error" class="mt-4 text-sm text-blush-deep" role="alert">{{ error }}</p>
+    <p v-if="error" class="mt-4 text-sm text-ink-soft" role="alert">{{ error }}</p>
   </main>
 </template>

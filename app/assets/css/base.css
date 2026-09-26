@@ -1,11 +1,12 @@
-html {
-  scroll-behavior: smooth;
+/* Anchored sections clear the fixed header when the router scrolls to them */
+[id] {
+  scroll-margin-top: 88px;
 }
 
 body {
   overflow-x: hidden;
   background: #FAF6F0;
-  color: #33302B;
+  color: #22211F;
   line-height: 1.7;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -19,6 +20,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 500;
   line-height: 1.15;
+  /* Even line lengths, so a heading never leaves one word on its own line */
+  text-wrap: balance;
 }
 
 /* Section eyebrow: small caps label flanked by hairlines */
@@ -39,10 +42,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 1px;
   background: #7D8B74;
 }
-.eyebrow--light { color: #E8CFC4; }
-.eyebrow--light::before,
-.eyebrow--light::after { background: #E8CFC4; }
-
 /* Pill buttons */
 .btn {
   display: inline-block;
@@ -56,58 +55,159 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 .btn-solid {
-  background: #3C4637;
+  background: #22211F;
   color: #FAF6F0;
-  border: 1px solid #3C4637;
+  border: 1px solid #22211F;
 }
 .btn-solid:hover {
   background: #55624D;
   border-color: #55624D;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(60, 70, 55, 0.25);
+  box-shadow: 0 10px 24px rgba(85, 98, 77, 0.25);
+}
+.btn-solid:disabled {
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
 }
 .btn-ghost {
-  border: 1px solid #3C4637;
-  color: #3C4637;
+  border: 1px solid #22211F;
+  color: #22211F;
 }
 .btn-ghost:hover {
-  background: #3C4637;
+  background: #22211F;
   color: #FAF6F0;
   transform: translateY(-2px);
 }
+/* Buttons for dark and photo backgrounds */
+.btn-light {
+  background: #FAF6F0;
+  color: #22211F;
+  border: 1px solid #FAF6F0;
+}
+.btn-light:hover {
+  background: #E6DACA;
+  border-color: #E6DACA;
+  transform: translateY(-2px);
+}
+.btn-ghost-light {
+  border: 1px solid rgba(250, 246, 240, 0.7);
+  color: #FAF6F0;
+}
+.btn-ghost-light:hover {
+  background: #FAF6F0;
+  color: #22211F;
+  transform: translateY(-2px);
+}
+
+/* Small-caps text link with a sage underline */
+.link-caps {
+  display: inline-block;
+  border-bottom: 1px solid #7D8B74;
+  padding-bottom: 3px;
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #55624D;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.link-caps:hover,
+.group:hover .link-caps {
+  color: #22211F;
+  border-color: #22211F;
+}
+
+/* Pill toggles: gallery filters and the contact form's radio/checkbox options */
+.chip {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #7D8B74;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #55624D;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.chip:hover {
+  border-color: #22211F;
+  color: #22211F;
+}
+.chip[aria-pressed='true'],
+input:checked + .chip {
+  background: #55624D;
+  border-color: #55624D;
+  color: #FAF6F0;
+}
+input:focus-visible + .chip {
+  box-shadow: 0 0 0 3px rgba(125, 139, 116, 0.35);
+}
+
+/* Contact form fields */
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #4A4741;
+}
+.field {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(34, 33, 31, 0.18);
+  border-radius: 4px;
+  background: #FAF6F0;
+  color: #22211F;
+  font-weight: 400;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field:focus {
+  outline: none;
+  border-color: #55624D;
+  box-shadow: 0 0 0 3px rgba(125, 139, 116, 0.2);
+}
+
+/* FAQ accordions: hide the native disclosure triangle (Safari needs the prefixed marker) */
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
 
 /* Soft colour washes */
 .bg-hero {
   background:
-    radial-gradient(ellipse 60% 45% at 12% 8%, rgba(232, 207, 196, 0.55), transparent 60%),
-    radial-gradient(ellipse 55% 50% at 88% 18%, rgba(125, 139, 116, 0.28), transparent 60%),
-    radial-gradient(ellipse 70% 55% at 50% 105%, rgba(185, 154, 95, 0.16), transparent 65%),
+    radial-gradient(ellipse 60% 45% at 12% 8%, rgba(230, 218, 202, 0.75), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 88% 18%, rgba(125, 139, 116, 0.26), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 50% 105%, rgba(180, 161, 134, 0.2), transparent 65%),
     #FAF6F0;
 }
-.bg-contact {
+/* Inner page tops: washes sized in px so they stay soft on narrow screens, fading to ivory before the next section */
+.bg-page {
   background:
-    radial-gradient(ellipse 60% 50% at 15% 100%, rgba(232, 207, 196, 0.5), transparent 60%),
-    radial-gradient(ellipse 55% 55% at 90% 0%, rgba(125, 139, 116, 0.24), transparent 60%),
+    radial-gradient(760px 460px at 6% 0%, rgba(230, 218, 202, 0.7), transparent 70%),
+    radial-gradient(680px 460px at 96% 4%, rgba(125, 139, 116, 0.15), transparent 70%),
     #FAF6F0;
 }
 
 /* Photo placeholder tints (shown when an image file is missing) */
 .ph-tint-1 {
   background:
-    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(232, 207, 196, 0.6), transparent 65%),
+    radial-gradient(ellipse 80% 60% at 20% 15%, rgba(230, 218, 202, 0.8), transparent 65%),
     radial-gradient(ellipse 70% 60% at 85% 90%, rgba(125, 139, 116, 0.35), transparent 65%),
     #F3ECE2;
 }
 .ph-tint-2 {
   background:
-    radial-gradient(ellipse 80% 60% at 80% 12%, rgba(185, 154, 95, 0.35), transparent 65%),
-    radial-gradient(ellipse 70% 60% at 12% 88%, rgba(232, 207, 196, 0.65), transparent 65%),
+    radial-gradient(ellipse 80% 60% at 80% 12%, rgba(180, 161, 134, 0.35), transparent 65%),
+    radial-gradient(ellipse 70% 60% at 12% 88%, rgba(230, 218, 202, 0.85), transparent 65%),
     #F3ECE2;
 }
 .ph-tint-3 {
   background:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(125, 139, 116, 0.4), transparent 70%),
-    radial-gradient(ellipse 70% 60% at 60% 100%, rgba(207, 162, 148, 0.5), transparent 65%),
+    radial-gradient(ellipse 70% 60% at 60% 100%, rgba(180, 161, 134, 0.45), transparent 65%),
     #F3ECE2;
 }
 

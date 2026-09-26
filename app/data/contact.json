@@ -1,11 +1,36 @@
 {
+  "seo": {
+    "title": "Contact & Book a Consultation | ABailey Events",
+    "description": "Request a consultation or quote for wedding planning, Bloom Bar services or décor rentals in Simcoe Muskoka. Email abaileyweddings@gmail.com or message @abaileyevents."
+  },
+  "band": {
+    "title": "Let's plan something beautiful",
+    "body": "Tell us a little about your celebration and we'll be in touch to set up a consultation.",
+    "cta": "Book a Consultation",
+    "photo": "/images/gallery/jm-wedding/shoes-and-rings.jpg"
+  },
+  "faqPrompt": "Have a quick question first?",
+  "faqCta": "Read the FAQ",
   "location": "Cookstown, Ontario",
+  "serviceArea": "Simcoe Muskoka",
+  "email": "abaileyweddings@gmail.com",
   "instagram": "abaileyevents",
   "instagramUrl": "https://www.instagram.com/abaileyevents/",
   "messageUrl": "https://ig.me/m/abaileyevents",
-  "areas": ["Cookstown", "Barrie", "Simcoe County", "GTA & beyond"],
   "scriptLine": "let's make it lovely",
-  "heading": "Tell me about your day",
-  "body": "Let us make your special day stunning and stress free. Every ABailey event starts with a friendly, no-pressure chat — send me a DM on Instagram with your date and what you're dreaming up, and I'll take it from there.",
-  "cta": "Message Me on Instagram"
+  "heading": "Tell us about your day",
+  "body": "Let us make your special day stunning and stress free. Share a few details to request a consultation or a quote, and we'll be in touch soon. Prefer to reach out directly? Email us or send us a message on Instagram.",
+  "cta": "Message Us on Instagram",
+  "followCta": "Follow us",
+  "form": {
+    "endpoint": "",
+    "intentLabel": "I'd like to",
+    "intents": ["Book a consultation", "Request a quote", "Ask a question"],
+    "eventTypes": ["Wedding", "Bridal shower", "Birthday", "Corporate event", "Other"],
+    "services": ["Month-of Coordination", "Full Wedding Planning", "Bloom Bar", "Décor Rentals", "Not sure yet"],
+    "submit": "Send Request",
+    "success": "Your request is on its way. We'll be in touch soon to talk about your celebration.",
+    "mailtoNote": "Your email app should open with your request ready to send. If it didn't, you can email us at",
+    "error": "Something went wrong sending your request. Please try again, or email us at"
+  }
 }

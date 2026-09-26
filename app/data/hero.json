@@ -1,8 +1,25 @@
 {
-  "kicker": "WPIC Certified Wedding Planner & Coordinator · Cookstown, Ontario",
-  "title": "Your day, in",
-  "titleEmphasis": "full bloom",
-  "scriptLine": "weddings & events by Ayla Bailey",
-  "sub": "Thoughtful planning, dreamy florals, and every last detail handled — so you can be a guest at your own celebration.",
-  "trust": ["WPIC Certified", "Bloom Bar Specialist", "Event Rentals", "Serving Simcoe County & the GTA"]
+  "seo": {
+    "title": "ABailey Events — Wedding Planning, Bloom Bar & Décor Rentals | Simcoe Muskoka",
+    "description": "ABailey Events — wedding planning and coordination, Bloom Bar services and décor rentals across Simcoe Muskoka. From vision to celebration, making your moments bloom."
+  },
+  "kicker": "Wedding & Event Planning · Simcoe Muskoka",
+  "title": "From vision to",
+  "titleEmphasis": "celebration",
+  "scriptLine": "making your moments bloom",
+  "tagline": "From vision to celebration, making your moments bloom",
+  "sub": "Wedding coordination, event planning, décor rentals and our signature Bloom Bar — beautiful celebrations that feel seamless, personal and uniquely yours.",
+  "ctas": [
+    { "label": "Book a Consultation", "href": "/contact" },
+    { "label": "View Packages", "href": "/event-planning#packages" }
+  ],
+  "slides": [
+    { "src": "/images/gallery/ma-wedding/sunset-veil-kiss.jpg", "alt": "Bride and groom kissing at golden hour, her long veil flowing" },
+    { "src": "/images/gallery/bloom-bar/garden-bloom-bar.jpg", "alt": "Garden Bloom Bar with a white floral arch, flower cart and fringed umbrella" },
+    { "src": "/images/gallery/em-wedding/pergola-ceremony.jpg", "alt": "Garden wedding ceremony beneath a white pergola dressed with white florals" },
+    { "src": "/images/gallery/ma-wedding/barn-floral-arch.jpg", "alt": "Barn ceremony stage with a white rose and greenery floral arch" },
+    { "src": "/images/rentals/elegant-timeless/arch-with-sage-drapery.jpg", "alt": "Bride beneath a gold arch with sage green drapery and white florals" }
+  ],
+  "accent": { "src": "/images/gallery/jm-wedding/bouquet-by-the-window.jpg", "alt": "White and blush rose bouquet" },
+  "trust": ["WPIC Certified", "Wedding Coordination", "Signature Bloom Bar", "Décor Rentals", "Simcoe Muskoka"]
 }

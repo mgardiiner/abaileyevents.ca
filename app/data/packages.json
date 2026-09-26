@@ -1,37 +1,65 @@
 {
-  "eyebrow": "Packages",
-  "title": "Something for every celebration",
-  "intro": "Every event is different — these packages are the starting point, and we'll tailor everything to your day in a free consultation.",
-  "note": "*Sample pricing shown — every quote is tailored to your event. Reach out for exact numbers.",
+  "eyebrow": "Wedding Packages",
+  "title": "Planning, your way",
+  "intro": "Whether you've planned every detail or you're just getting started, there's a package to carry your vision through to the last dance.",
   "items": [
     {
-      "name": "Full Planning",
-      "tag": "The whole journey",
-      "price": "$3,500",
-      "priceNote": "sample*",
-      "features": ["Planning from \"yes!\" to last dance", "Budget & vendor management", "Design & décor direction", "Unlimited check-ins", "Full day-of coordination"]
+      "name": "Month-of Wedding Coordination",
+      "tag": "You plan, we take the reins",
+      "pricePrefix": "Starting at",
+      "price": "$800",
+      "summary": "Designed for couples who have planned their wedding but want a professional to step in during the final month and make sure everything comes together seamlessly.",
+      "features": [
+        "Final month planning and coordination",
+        "Detailed review of your wedding plans and timeline",
+        "Management of the wedding day timeline",
+        "Final vendor communication and confirmations",
+        "Coordination with the venue and wedding party",
+        "Wedding day setup and décor assistance",
+        "Vendor arrival and setup coordination",
+        "Ceremony coordination",
+        "Reception coordination",
+        "Cueing key moments",
+        "Troubleshooting and handling unexpected details throughout the day",
+        "Professional support so you can relax and enjoy your wedding day"
+      ],
+      "goal": "You've done the planning — now let ABailey Events take the reins and make sure your vision is carried out on your wedding day.",
+      "cta": "Book a Consultation"
     },
     {
-      "name": "Day-of Coordination",
-      "tag": "You plan, I execute",
-      "price": "$1,200",
-      "priceNote": "sample*",
-      "featured": true,
-      "flag": "Most Popular",
-      "features": ["Timeline built together", "Vendor confirmations", "Rehearsal guidance", "On-site management all day", "Emergency kit on hand"]
-    },
-    {
-      "name": "Bloom Bar",
-      "tag": "The signature 💐",
-      "price": "$600",
-      "priceNote": "sample*",
-      "features": ["Styled fresh-flower bar", "Seasonal stem selection", "Wraps, tags & supplies", "Kids' birthday party package", "Setup & teardown included"]
-    },
-    {
-      "name": "Event Rentals",
-      "tag": "The finishing touches",
-      "price": "à la carte",
-      "features": ["Arches & backdrops", "Life-like faux floral packages", "Table décor & vessels", "Setup & styling included", "Bundle with any package"]
+      "name": "Full Wedding Planning",
+      "tag": "From first idea to final dance",
+      "pricePrefix": "Starting at",
+      "price": "$1,500",
+      "summary": "Perfect for couples who want professional guidance from the beginning stages of planning all the way through their wedding day. ABailey Events works alongside you to bring your vision to life while managing the details, vendors, timeline and logistics along the way.",
+      "features": [
+        "Full wedding planning from start to finish",
+        "Initial consultation and vision planning",
+        "Ongoing planning and organization",
+        "Personalized planning checklist and timeline",
+        "Venue research and selection assistance",
+        "Vendor recommendations and communication",
+        "Assistance with booking and managing vendors",
+        "Décor and design planning",
+        "Wedding theme, colour palette and styling guidance",
+        "Ceremony and reception layout planning",
+        "Detailed wedding day timeline",
+        "Guest experience and logistics planning",
+        "Final vendor confirmations",
+        "Wedding day setup and décor assistance",
+        "Full wedding day coordination",
+        "Ceremony and reception management",
+        "Coordination of vendors and wedding party",
+        "Timeline management and cueing of key moments",
+        "Troubleshooting and behind-the-scenes support"
+      ],
+      "goal": "From the first idea to the final dance, ABailey Events handles the details so you can focus on enjoying the experience and celebrating your love.",
+      "cta": "Book a Consultation"
     }
-  ]
+  ],
+  "custom": {
+    "title": "Custom quotes, always",
+    "body": "Every celebration is different. If you'd like something tailored to your day, we're happy to put together a custom quote.",
+    "cta": "Request a Custom Quote"
+  }
 }

@@ -1,0 +1,63 @@
+name: Deploy Nuxt to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Grant the deploy job permission to publish to Pages and authenticate via OIDC.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one deploy at a time; never cancel an in-progress publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Nuxt (static)
+        run: npm run generate
+
+      - name: Preserve custom domain
+        run: cp CNAME .output/public/CNAME
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy1.outputs.page_url || steps.deploy2.outputs.page_url }}
+    steps:
+      # GitHub's Pages backend intermittently returns a transient
+      # "Deployment failed, try again later". Retry once so it self-heals
+      # instead of needing a manual re-run.
+      - name: Deploy to GitHub Pages
+        id: deploy1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Deploy to GitHub Pages (retry on transient failure)
+        if: steps.deploy1.outcome == 'failure'
+        id: deploy2
+        uses: actions/deploy-pages@v4

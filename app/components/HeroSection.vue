@@ -18,7 +18,7 @@ onBeforeUnmount(() => clearInterval(timer))
 
 <template>
   <header id="top" class="bg-hero relative overflow-hidden px-6 pb-24 pt-[112px] lg:flex lg:min-h-svh lg:items-center lg:pb-20 lg:pt-[104px]">
-    <RoseStem class="pointer-events-none absolute -bottom-28 -left-[110px] w-[220px] rotate-[18deg] opacity-30 sm:-bottom-52 sm:-left-[130px] sm:w-[300px]" color="#7D8B74" />
+    <RoseBloom class="pointer-events-none absolute -bottom-[60px] -left-[70px] w-[200px] rotate-[10deg] opacity-30 sm:-bottom-[70px] sm:-left-[80px] sm:w-[260px]" color="#7D8B74" bunch />
 
     <div class="relative mx-auto grid w-full max-w-wrap items-center gap-16 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-20">
       <div class="text-center lg:text-left">

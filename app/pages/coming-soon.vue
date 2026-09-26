@@ -8,8 +8,8 @@ useHead({ title: comingSoon.pageTitle })
 
 <template>
   <main class="bg-hero relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 py-[90px] text-center text-ink">
-    <RoseStem class="pointer-events-none absolute -bottom-10 -left-[70px] w-[240px] rotate-[8deg] opacity-50 sm:w-[340px]" color="#7D8B74" />
-    <RoseStem class="pointer-events-none absolute -right-[60px] top-[60px] w-[220px] -rotate-6 -scale-x-100 opacity-60 sm:w-[300px]" color="#B4A186" />
+    <RoseBloom class="pointer-events-none absolute -bottom-[40px] -left-[60px] w-[260px] rotate-[8deg] opacity-50 sm:w-[360px]" color="#7D8B74" bunch />
+    <RoseBloom class="pointer-events-none absolute -right-[50px] top-[50px] w-[180px] -rotate-12 -scale-x-100 opacity-60 sm:w-[240px]" color="#B4A186" />
 
     <p class="relative mb-10 font-serif text-[1.5rem] tracking-[0.06em] text-ink">
       <b class="font-semibold">ABailey</b> Events <RoseMark class="inline-block h-[1.1em] w-[1.1em] align-[-0.16em] text-sage" :weight="1.4" sparkle />

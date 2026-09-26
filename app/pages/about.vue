@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import about from '~/data/about.json'
+const about = useContent('about')
 
 usePageSeo(about.seo)
 </script>

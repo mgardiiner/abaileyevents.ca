@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import gallery from '~/data/gallery.json'
+const gallery = useContent('gallery')
 
 interface Shot {
   src: string
@@ -15,13 +15,13 @@ const items: Shot[] = gallery.items
 const route = useRoute()
 
 // Only offer a filter for event types that have at least one photo tagged.
-const filters = [
+const filters = computed(() => [
   { id: 'all', label: 'All' },
   ...gallery.categories.filter(category => items.some(shot => shot.categories.includes(category.id))),
-]
+])
 // Links like /gallery?category=bloom-bar open on that filter.
 const requested = route.query.category
-const active = ref(typeof requested === 'string' && filters.some(filter => filter.id === requested) ? requested : 'all')
+const active = ref(typeof requested === 'string' && filters.value.some(filter => filter.id === requested) ? requested : 'all')
 const shots = computed(() => active.value === 'all' ? items : items.filter(shot => shot.categories.includes(active.value)))
 
 // Show a page of photos at a time so the page stays a reasonable length.

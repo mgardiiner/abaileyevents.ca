@@ -7,33 +7,9 @@
   "title": "From the little details to the big moments",
   "intro": "ABailey Events is a creative event and wedding planning business dedicated to bringing beautiful celebrations to life — stylish, personal, and seamless from start to finish.",
   "offerings": [
-    {
-      "title": "Wedding Planning & Coordination",
-      "summary": "A planner by your side from the very first idea, or a coordinator to take the reins in the final month.",
-      "meta": "Packages from $800",
-      "photo": "/images/gallery/em-wedding/bride-under-the-willow.jpg",
-      "photoAlt": "Bride beneath a willow tree with her long veil trailing on the grass",
-      "cta": "Planning & Packages",
-      "href": "/event-planning"
-    },
-    {
-      "title": "Bloom Bar Services",
-      "summary": "An interactive fresh-flower bar where your guests build their own bouquets to take home.",
-      "meta": "Custom quotes",
-      "photo": "/images/gallery/bloom-bar/gathering-stems.jpg",
-      "photoAlt": "Gathering a handful of fresh stems at the Bloom Bar",
-      "cta": "About the Bloom Bar",
-      "href": "/event-planning#bloom-bar"
-    },
-    {
-      "title": "Décor Rentals",
-      "summary": "Soft white florals, candlelight and sage green drapery to pull your whole look together.",
-      "meta": "Package $400",
-      "photo": "/images/rentals/elegant-timeless/styled-tablescape.jpg",
-      "photoAlt": "Styled table with white florals and candlesticks from our décor rentals",
-      "cta": "Browse Rentals",
-      "href": "/decor-rentals"
-    }
+    { "title": "Wedding Planning & Coordination", "summary": "A planner by your side from the very first idea, or a coordinator to take the reins in the final month.", "meta": "Packages from $800", "photo": "/images/gallery/em-wedding/bride-under-the-willow.jpg", "photoAlt": "Bride beneath a willow tree with her long veil trailing on the grass", "cta": "Planning & Packages", "href": "/event-planning" },
+    { "title": "Bloom Bar Services", "summary": "An interactive fresh-flower bar where your guests build their own bouquets to take home.", "meta": "Custom quotes", "photo": "/images/gallery/bloom-bar/gathering-stems.jpg", "photoAlt": "Gathering a handful of fresh stems at the Bloom Bar", "cta": "About the Bloom Bar", "href": "/event-planning#bloom-bar" },
+    { "title": "Décor Rentals", "summary": "Soft white florals, candlelight and sage green drapery to pull your whole look together.", "meta": "Package $400", "photo": "/images/rentals/elegant-timeless/styled-tablescape.jpg", "photoAlt": "Styled table with white florals and candlesticks from our décor rentals", "cta": "Browse Rentals", "href": "/decor-rentals" }
   ],
   "page": {
     "eyebrow": "Event Planning",

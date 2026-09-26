@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import comingSoon from '~/data/coming-soon.json'
-import contact from '~/data/contact.json'
+const comingSoon = useContent('coming-soon')
+const contact = useContent('contact')
 
 definePageMeta({ layout: false })
 useHead({ title: comingSoon.pageTitle })

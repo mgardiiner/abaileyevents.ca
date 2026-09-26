@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import faq from '~/data/faq.json'
+const faq = useContent('faq')
 
 usePageSeo(faq.seo)
 </script>

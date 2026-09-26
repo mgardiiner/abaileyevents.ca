@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import hero from '~/data/hero.json'
+const hero = useContent('hero')
 
 usePageSeo(hero.seo)
 </script>

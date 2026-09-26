@@ -35,6 +35,10 @@ jobs:
         run: npm run generate
         env:
           PREVIEW_PASSWORD: ${{ secrets.PREVIEW_PASSWORD }}
+          # The website editor's password and the GitHub key it publishes with; the build ships
+          # only the key encrypted with the password (see nuxt.config.ts).
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          ADMIN_GITHUB_TOKEN: ${{ secrets.ADMIN_GITHUB_TOKEN }}
 
       - name: Preserve custom domain
         run: cp CNAME .output/public/CNAME

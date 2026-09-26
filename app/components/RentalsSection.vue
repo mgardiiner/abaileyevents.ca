@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import rentals from '~/data/rentals.json'
+const rentals = useContent('rentals')
 
 interface RentalItem {
   name: string

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import contact from '~/data/contact.json'
-import gallery from '~/data/gallery.json'
+const contact = useContent('contact')
+const gallery = useContent('gallery')
 
 usePageSeo(gallery.seo)
 </script>

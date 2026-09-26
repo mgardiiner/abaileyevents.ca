@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import services from '~/data/services.json'
+const services = useContent('services')
 
 usePageSeo(services.seo)
 const { page } = services

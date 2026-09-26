@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import contact from '~/data/contact.json'
+const contact = useContent('contact')
 </script>
 
 <template>

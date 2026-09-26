@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import packages from '~/data/packages.json'
+const packages = useContent('packages')
 </script>
 
 <template>

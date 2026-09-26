@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import testimonials from '~/data/testimonials.json'
+const testimonials = useContent('testimonials')
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import contact from '~/data/contact.json'
-import hero from '~/data/hero.json'
-import links from '~/data/nav.json'
+const contact = useContent('contact')
+const hero = useContent('hero')
+const links = useContent('nav')
 
 const year = new Date().getFullYear()
 </script>

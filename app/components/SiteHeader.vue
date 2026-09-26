@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import links from '~/data/nav.json'
+const links = useContent('nav')
 
 const route = useRoute()
 const scrolled = ref(false)

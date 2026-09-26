@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import rentals from '~/data/rentals.json'
+const rentals = useContent('rentals')
 
 usePageSeo(rentals.seo)
 const failed = reactive(new Set<string>())

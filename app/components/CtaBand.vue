@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import contact from '~/data/contact.json'
+const contact = useContent('contact')
 </script>
 
 <!-- Full-width photo band that closes most pages with a way to get in touch -->
 <template>
-  <section class="relative isolate overflow-hidden px-6 py-28 text-center md:py-36">
+  <section id="book" class="relative isolate overflow-hidden px-6 py-28 text-center md:py-36">
     <img :src="contact.band.photo" alt="" loading="lazy" class="absolute inset-0 -z-20 h-full w-full object-cover">
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/60 via-ink/50 to-ink/65" aria-hidden="true" />
     <div v-reveal>

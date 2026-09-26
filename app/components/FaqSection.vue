@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import faq from '~/data/faq.json'
+const faq = useContent('faq')
 
 // `only` embeds one group (e.g. "rentals") on its service page; without it, every group is listed.
 const props = defineProps<{ only?: string }>()

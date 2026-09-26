@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import contact from '~/data/contact.json'
-import gallery from '~/data/gallery.json'
+const contact = useContent('contact')
+const gallery = useContent('gallery')
 
 // The home page shows the hand-picked highlights, in the order they are listed.
-const shots = gallery.highlights.flatMap(src => gallery.items.filter(item => item.src === src))
+const shots = computed(() => gallery.highlights.flatMap(src => gallery.items.filter(item => item.src === src)))
 const failed = reactive(new Set<string>())
 </script>
 

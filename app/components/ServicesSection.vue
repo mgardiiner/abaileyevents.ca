@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import services from '~/data/services.json'
+const services = useContent('services')
 
 // Photos whose file failed to load render a placeholder naming the file instead.
 const failed = reactive(new Set<string>())

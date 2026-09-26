@@ -20,6 +20,15 @@
     { "src": "/images/gallery/ma-wedding/barn-floral-arch.jpg", "alt": "Barn ceremony stage with a white rose and greenery floral arch" },
     { "src": "/images/rentals/elegant-timeless/arch-with-sage-drapery.jpg", "alt": "Bride beneath a gold arch with sage green drapery and white florals" }
   ],
-  "accent": { "src": "/images/gallery/jm-wedding/bouquet-by-the-window.jpg", "alt": "White and blush rose bouquet" },
-  "trust": ["WPIC Certified", "Wedding Coordination", "Signature Bloom Bar", "Décor Rentals", "Simcoe Muskoka"]
+  "accent": {
+    "src": "/images/gallery/jm-wedding/bouquet-by-the-window.jpg",
+    "alt": "White and blush rose bouquet"
+  },
+  "trust": [
+    "WPIC Certified",
+    "Wedding Coordination",
+    "Signature Bloom Bar",
+    "Décor Rentals",
+    "Simcoe Muskoka"
+  ]
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import packages from '~/data/packages.json'
-import services from '~/data/services.json'
+const packages = useContent('packages')
+const services = useContent('services')
 
 const { featured } = services
 const failed = reactive(new Set<string>())

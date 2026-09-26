@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import hero from '~/data/hero.json'
+const hero = useContent('hero')
 
-const kickerParts = hero.kicker.split(' · ')
+const kickerParts = computed(() => hero.kicker.split(' · '))
 
 // Crossfade through the hero photos; visitors who prefer reduced motion keep the first.
 const current = ref(0)

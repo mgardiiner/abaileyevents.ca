@@ -22,9 +22,28 @@ npm run preview
 
 Pushing to `main` runs `.github/workflows/deploy.yml` (Node 22), which generates the site, copies `CNAME` into the output and publishes it to GitHub Pages.
 
+## Website editor
+
+`/admin` is a point-and-click editor for everything in `app/data/`: words, prices, packages, FAQ, reviews, contact details and photos, with a live preview of each page beside the form. Photos are resized in the browser (1600px on the long edge) before upload, and gallery photos get their event folder, categories and description in the same step. Work in progress is saved on the device until it's published.
+
+**Signing in** takes the editor password. The editor publishes with a GitHub [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) limited to `mgardiiner/abaileyevents.ca`, with **Contents: Read and write** and **Actions: Read-only**. Set both in `.env` (and in the repo's Actions secrets, e.g. with `npm run sync-secrets`):
+
+```
+ADMIN_PASSWORD=a long passphrase
+ADMIN_GITHUB_TOKEN=github_pat_…
+```
+
+The site is static, so the build can't keep a secret: it ships the token encrypted with a key derived from the password (PBKDF2-SHA256, 600,000 rounds, then AES-256-GCM), and the sign-in screen decrypts it in the browser. Anyone can download the encrypted token and try passwords against it, so use a long password and keep the token limited to this repo. Changing either value takes effect on the next deploy. Without them, the sign-in screen asks for the token itself (an "access key"), which also works as a fallback. The token stays in the browser and is sent only to the GitHub API.
+
+**Publishing** makes one commit on `main` with the changed data files and new photos, which runs the normal deploy. The editor shows the deploy's progress and says when the change is live (about two minutes). If the site changed somewhere else since the editor loaded it, publishing stops and offers to load the latest version instead of overwriting it.
+
+**Locally**, `npm run dev` adds an "Edit the files on this computer" button to the sign-in screen, which reads and writes `app/data/` and `public/images/` directly (`modules/admin-local.ts`, dev server only).
+
+The forms are defined in `app/admin/sections.ts`. A new field in a data file only needs an entry there to become editable.
+
 ## Editing content
 
-All copy lives in `app/data/*.json`, so text changes never touch the components. Each page's browser-tab title and search description sit under `seo` in its file.
+Most changes can be made in the website editor above. By hand, all copy lives in `app/data/*.json`, so text changes never touch the components. Each page's browser-tab title and search description sit under `seo` in its file.
 
 | File | Page | What it holds |
 |---|---|---|
@@ -72,10 +91,13 @@ With `form.endpoint` empty in `contact.json`, submitting the form opens the visi
 - **Testimonials** in `testimonials.json`: all three quotes.
 - **Rental items** in `rentals.json`: none listed yet.
 - **Draft copy** for the planning, Bloom Bar and décor rental descriptions (`services.json`, `rentals.json`) is ready for review.
+
 ## Layout
 
 - `app/pages/` has one file per menu tab: `index` (Home), `event-planning` (planning, packages, Bloom Bar), `decor-rentals`, `gallery`, `about`, `faq` and `contact`. Packages live on Event Planning; the Home "View Packages" button and that page's jump links go to `/event-planning#packages`
 - `app/components/` components are auto-imported without a path prefix; `PageHeader` tops each inner page and `CtaBand` closes most of them
+- `app/composables/useContent.ts` is how components read `app/data/`; the editor's preview swaps in unpublished changes through it (`app/plugins/admin-preview.client.ts`)
+- `app/admin/` holds the website editor's logic (forms, drafts, photos, publishing) and `app/components/admin/` its screens; `app/pages/admin.vue` ties them together
 - `app/composables/usePageSeo.ts` sets a page's title and description from its `seo` data
 - `app/plugins/reveal.ts` registers `v-reveal`, the scroll-in fade; `hash-scroll.client.ts` scrolls to the section when a link like `/event-planning#packages` is opened from outside the site, or clicked again once the address already points there
 - `app/assets/css/base.css` holds shared classes (`.btn`, `.eyebrow`, background washes)

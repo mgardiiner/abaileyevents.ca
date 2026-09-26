@@ -1,0 +1,34 @@
+/* Website editor (/admin) only; imported by pages/admin.vue so the site never loads it. */
+.a-btn {
+  @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-5 text-[0.92rem] font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+.a-btn-primary {
+  @apply bg-ink text-ivory hover:bg-sage-deep;
+}
+.a-btn-quiet {
+  @apply border border-ink/15 bg-white text-ink hover:border-ink/40;
+}
+.a-btn-danger {
+  @apply border border-[#A23B2A]/25 bg-white text-[#A23B2A] hover:border-[#A23B2A]/60;
+}
+.a-icon-btn {
+  @apply grid h-10 w-10 shrink-0 place-items-center rounded-full text-ink-muted transition-colors hover:bg-ink/5 hover:text-ink disabled:pointer-events-none disabled:opacity-25;
+}
+.a-input {
+  @apply block w-full rounded-lg border border-ink/20 bg-white px-3.5 py-2.5 text-base leading-relaxed text-ink transition-shadow placeholder:text-ink-faint/70 focus:border-sage-deep focus:outline-none focus:ring-4 focus:ring-sage/20;
+}
+.a-label {
+  @apply text-[0.95rem] font-medium text-ink;
+}
+.a-help {
+  @apply text-[0.86rem] leading-snug text-ink-muted;
+}
+.a-card {
+  @apply rounded-xl bg-white shadow-[0_1px_2px_rgba(34,33,31,0.06),0_8px_24px_-12px_rgba(34,33,31,0.12)] ring-1 ring-ink/[0.06];
+}
+.a-error {
+  @apply text-[0.86rem] text-[#A23B2A];
+}
+.a-add {
+  @apply flex min-h-[48px] w-full items-center justify-center gap-2 rounded-lg border border-dashed border-ink/25 text-[0.92rem] font-medium text-sage-deep transition-colors hover:border-sage-deep hover:bg-sage-mist/40;
+}

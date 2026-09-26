@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import about from '~/data/about.json'
+const about = useContent('about')
 
 const failed = reactive(new Set<string>())
 </script>

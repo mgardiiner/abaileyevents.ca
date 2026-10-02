@@ -3,7 +3,8 @@ const packages = useContent('packages')
 </script>
 
 <template>
-  <section id="packages" class="relative overflow-hidden bg-cream px-6 py-24">
+  <!-- overflow-clip, not hidden, so the package cards' left column can stay in view -->
+  <section id="packages" class="relative overflow-clip bg-cream px-6 py-24">
     <RoseBloom class="pointer-events-none absolute -right-[60px] -top-[50px] hidden w-[220px] rotate-[20deg] opacity-35 md:block" color="#55624D" />
     <SectionIntro :eyebrow="packages.eyebrow" :title="packages.title" :intro="packages.intro" />
     <div class="mx-auto mt-16 grid max-w-wrap gap-10">

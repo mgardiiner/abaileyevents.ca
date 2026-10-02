@@ -23,13 +23,13 @@
   "cta": "Message Us on Instagram",
   "followCta": "Follow us",
   "form": {
-    "endpoint": "",
+    "endpoint": "https://formsubmit.co/ajax/abaileyweddings@gmail.com",
     "intentLabel": "I'd like to",
     "intents": ["Book a consultation", "Request a quote", "Ask a question"],
     "eventTypes": ["Wedding", "Bridal shower", "Birthday", "Corporate event", "Other"],
     "services": ["Month-of Coordination", "Full Wedding Planning", "Bloom Bar", "Décor Rentals", "Not sure yet"],
     "submit": "Send Request",
-    "success": "Your request is on its way. We'll be in touch soon to talk about your celebration.",
+    "success": "Thank you for your request. We'll be in touch soon to talk about your celebration.",
     "mailtoNote": "Your email app should open with your request ready to send. If it didn't, you can email us at",
     "error": "Something went wrong sending your request. Please try again, or email us at"
   }

@@ -422,7 +422,7 @@ export async function publish() {
     for (const name of names) changes.push({ path: contentPath(name), text: formatJson(state.draft[name]) })
     const base = Object.fromEntries(names.map(name => [contentPath(name), state.shas[contentPath(name)] ?? '']).filter(([, sha]) => sha))
     const photoNote = photos.length ? ` (${photos.length} new photo${photos.length === 1 ? '' : 's'})` : ''
-    const message = `Update ${areas.join(', ') || 'photos'} from the website editor${photoNote}`
+    const message = `[Admin] Update ${areas.join(', ') || 'photos'}${photoNote}`
 
     const result = await backend.publish(changes, message, base, (done) => {
       state.publishing = done < photos.length ? `Uploading photos (${done + 1} of ${photos.length})…` : 'Saving your changes…'

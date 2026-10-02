@@ -49,11 +49,11 @@ Most changes can be made in the website editor above. By hand, all copy lives in
 |---|---|---|
 | `hero.json` | Home | Hero headline (the tagline), kicker, subline, buttons, slideshow photos and the trust strip |
 | `services.json` | Home, Event Planning | The three offering cards on Home (`offerings`, in priority order, with the price badge text in `meta`), plus the Event Planning page header, wedding planning block and Bloom Bar section |
-| `packages.json` | Event Planning | Wedding packages: starting price, inclusions and "the goal" for each, plus the custom-quote box. The wedding planning block reads its prices from here |
-| `rentals.json` | Décor Rentals | Header photos, the Elegant & Timeless package, the "How renting works" steps and individual rental items |
+| `packages.json` | Event Planning | Wedding packages: starting price, five at-a-glance `highlights`, full `features` and "the goal" inside expandable details, plus the custom-quote box. The wedding planning block reads its prices from here |
+| `rentals.json` | Décor Rentals | Header photos, the Elegant & Timeless package (the same highlights/details layout, with fees always visible), the "How renting works" steps and individual rental items |
 | `gallery.json` | Gallery, Home | Photos, captions, credits and event-type filters; `highlights` picks the five photos shown on Home |
 | `about.json` | About, Home | About copy, portrait, fact chips, the photo strip, and the short "Meet Ayla" block on Home |
-| `testimonials.json` | Home, About | Kind Words quotes; set `placeholder: false` once they're real |
+| `testimonials.json` | Home, About | Kind Words carousel: `quote` is a verbatim excerpt, `fullQuote` opens in the full-review dialog, `cite` credits the author, and `context` describes the event or relationship. It advances every seven seconds, with manual navigation and a pause control; reduced-motion preferences disable automatic scrolling initially |
 | `faq.json` | FAQ, Event Planning, Décor Rentals | FAQ questions by group. Each group's `id` (`planning`, `rentals`) also shows it on that service page |
 | `contact.json` | Contact, every page | Email, Instagram links, service area, contact copy, the form's options, and the photo band (`band`) that closes most pages |
 | `nav.json` | Every page | The menu links, shared by the header and footer |
@@ -83,12 +83,16 @@ Add an entry to `items` in `rentals.json`. Leave `photo` out until there is one;
 
 ### Contact form
 
-With `form.endpoint` empty in `contact.json`, submitting the form opens the visitor's email app with the request addressed to the business email. To have requests arrive without that step, create a form at a service such as [Formspree](https://formspree.io) and paste its endpoint URL into `form.endpoint`. The form posts JSON with `_subject` and `_replyto` set.
+The form posts directly to [FormSubmit](https://formsubmit.co/ajax-documentation) using `form.endpoint` in `contact.json`, with requests addressed to `abaileyweddings@gmail.com`. Contact, quote and consultation requests share this form. The payload includes the visitor's `email`, `_replyto`, `_subject`, request type and all entered event details. A honeypot filters bots; a 15-second timeout and failure message let visitors retry or email directly when the service cannot accept a request.
+
+**One-time activation is required:** the first submission sends a confirmation email to `abaileyweddings@gmail.com`. The owner must click its activation link, then submit a fresh test request and confirm that it arrives with the correct reply-to address and event details. An accepted HTTP response alone does not prove inbox delivery. Keep the preview restriction until delivery has been verified and launch is approved.
+
+The endpoint can be changed to another JSON-compatible form service in the editor. Leaving `form.endpoint` empty restores the fallback that opens the visitor's email app.
+
+The supplied logo is kept unchanged at `public/images/abailey-events-logo.jpg`. The site shows transparent cut-outs of it, so it sits on any background: `abailey-events-logo.webp` (the complete artwork, on the Coming Soon page), `abailey-events-mark.webp` (the circle, monogram and roses, in the header) and `abailey-events-mark-badge.webp` (the same mark with the cream kept inside the circle, in the footer). `BrandLogo.vue` picks between them. A new version of the logo needs new cut-outs made from it.
 
 ### Still placeholder
 
-- **Logo**: the header and footer use a text wordmark until the logo file arrives.
-- **Testimonials** in `testimonials.json`: all three quotes.
 - **Rental items** in `rentals.json`: none listed yet.
 - **Draft copy** for the planning, Bloom Bar and décor rental descriptions (`services.json`, `rentals.json`) is ready for review.
 

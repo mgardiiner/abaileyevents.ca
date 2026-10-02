@@ -35,6 +35,7 @@ function details() {
 }
 
 async function submit() {
+  if (status.value === 'sending') return
   if (form.website) {
     status.value = 'sent'
     return
@@ -50,16 +51,35 @@ async function submit() {
   }
 
   status.value = 'sending'
+  const controller = new AbortController()
+  const timeout = window.setTimeout(() => controller.abort(), 15_000)
   try {
+    const fields = details()
+    // Form services use the lowercase email field for reply-to and validation.
+    delete fields.Email
     const res = await fetch(copy.endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ _subject: subject, _replyto: form.email, ...details() }),
+      signal: controller.signal,
+      body: JSON.stringify({
+        ...fields,
+        email: form.email,
+        _subject: subject,
+        _replyto: form.email,
+        _honey: form.website,
+      }),
     })
-    status.value = res.ok ? 'sent' : 'error'
+    // Some form services return a 200 response even when the submission fails.
+    const result = await res.json()
+    const rejected = result?.success === false || result?.success === 'false'
+      || Boolean(result?.error) || (Array.isArray(result?.errors) && result.errors.length > 0)
+    status.value = res.ok && !rejected ? 'sent' : 'error'
   }
   catch {
     status.value = 'error'
+  }
+  finally {
+    window.clearTimeout(timeout)
   }
 }
 </script>

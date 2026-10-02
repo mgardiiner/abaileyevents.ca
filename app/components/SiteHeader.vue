@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BrandLogo from './BrandLogo.vue'
+
 const links = useContent('nav')
 
 const route = useRoute()
@@ -24,11 +26,12 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 <template>
   <nav
-    class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-[18px] transition-[background-color,box-shadow] duration-300 sm:px-7"
+    class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-3 transition-[background-color,box-shadow] duration-300 sm:px-7"
     :class="scrolled || open ? 'bg-ivory/95 shadow-nav backdrop-blur' : ''"
   >
-    <NuxtLink to="/" class="font-serif text-[1.35rem] tracking-[0.06em] text-ink">
-      <b class="font-semibold">ABailey</b> Events <RoseMark class="inline-block h-[1.1em] w-[1.1em] align-[-0.16em] text-sage" :weight="1.4" sparkle />
+    <NuxtLink to="/" class="flex shrink-0 items-center gap-2.5 font-serif text-[1.15rem] tracking-[0.06em] text-ink sm:text-[1.35rem]" aria-label="ABailey Events home">
+      <BrandLogo compact class="h-12 w-12" />
+      <span><b class="font-semibold">ABailey</b> Events</span>
     </NuxtLink>
     <button class="text-2xl text-ink lg:hidden" aria-label="Menu" :aria-expanded="open" @click="open = !open">☰</button>
     <ul

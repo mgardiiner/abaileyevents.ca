@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BrandLogo from './BrandLogo.vue'
+
 const contact = useContent('contact')
 const hero = useContent('hero')
 const links = useContent('nav')
@@ -10,8 +12,11 @@ const year = new Date().getFullYear()
   <footer class="bg-sage-deep px-6 pb-9 pt-16 text-[0.9rem] text-ivory/85">
     <div class="mx-auto grid max-w-wrap gap-12 text-center md:grid-cols-[1.5fr_1fr_1.2fr] md:gap-10 md:text-left">
       <div>
-        <NuxtLink to="/" class="font-serif text-[1.7rem] tracking-[0.06em] text-ivory"><b class="font-semibold">ABailey</b> Events <RoseMark class="inline-block h-[1.1em] w-[1.1em] align-[-0.16em] text-beige" :weight="1.4" sparkle /></NuxtLink>
-        <p class="mt-1 font-script text-[1.45rem] leading-snug text-beige [text-wrap:balance]">{{ hero.tagline }}</p>
+        <NuxtLink to="/" class="mx-auto flex w-fit max-w-full items-center gap-3 font-serif text-[1.5rem] tracking-[0.06em] text-ivory md:mx-0" aria-label="ABailey Events home">
+          <BrandLogo compact badge class="h-12 w-12 opacity-85" />
+          <span><b class="font-semibold">ABailey</b> Events</span>
+        </NuxtLink>
+        <p class="mt-4 font-script text-[1.45rem] leading-snug text-beige [text-wrap:balance]">{{ hero.tagline }}</p>
         <p class="mx-auto mt-4 max-w-[34ch] text-[0.85rem] md:mx-0">WPIC Certified wedding planner &amp; coordinator, based in {{ contact.location }} and serving {{ contact.serviceArea }}.</p>
       </div>
       <nav aria-label="Footer">

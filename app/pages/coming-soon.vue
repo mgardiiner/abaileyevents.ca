@@ -11,9 +11,7 @@ useHead({ title: comingSoon.pageTitle })
     <RoseBloom class="pointer-events-none absolute -bottom-[40px] -left-[60px] w-[260px] rotate-[8deg] opacity-50 sm:w-[360px]" color="#7D8B74" bunch />
     <RoseBloom class="pointer-events-none absolute -right-[50px] top-[50px] w-[180px] -rotate-12 -scale-x-100 opacity-60 sm:w-[240px]" color="#B4A186" />
 
-    <p class="relative mb-10 font-serif text-[1.5rem] tracking-[0.06em] text-ink">
-      <b class="font-semibold">ABailey</b> Events <RoseMark class="inline-block h-[1.1em] w-[1.1em] align-[-0.16em] text-sage" :weight="1.4" sparkle />
-    </p>
+    <BrandLogo class="relative mb-8 w-60 rounded-sm sm:w-72" fetchpriority="high" />
     <p class="relative mb-[22px] text-xs font-medium uppercase tracking-[0.34em] text-sage-deep">{{ comingSoon.kicker }}</p>
     <h1 class="relative mx-auto max-w-[14ch] text-[clamp(2.8rem,7.5vw,5.2rem)] text-ink">
       {{ comingSoon.title }} <em class="italic text-sage">{{ comingSoon.titleEmphasis }}</em>.

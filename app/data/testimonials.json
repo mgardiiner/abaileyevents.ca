@@ -1,20 +1,38 @@
 {
   "eyebrow": "Kind Words",
-  "title": "From couples & clients",
-  "placeholder": true,
-  "note": "Placeholder quotes — swap in real reviews from the \"Reviews 🤍\" Instagram highlight.",
+  "title": "From clients & collaborators",
+  "placeholder": false,
+  "note": "",
   "items": [
     {
-      "quote": "[Paste a favourite review from the Instagram Reviews highlight here — a line or two about the wedding day going smoothly.]",
-      "cite": "[Couple's names], [venue or town]"
+      "quote": "Your attention to detail ensured that every aspect of our wedding was flawless. We are forever grateful for the joy and memories you helped create.",
+      "cite": "Jessie & Matt",
+      "context": "Wedding planning",
+      "fullQuote": "Dear Ayla & Andrew,\n\nWe wanted to take a moment to express our deepest gratitude for the exceptional job you did as our wedding planner. From the very beginning, you were an incredible source of guidance, support, and creativity, turning our vision into a reality. Your attention to detail ensured that every aspect of our wedding was flawless. We are forever grateful for the joy and memories you helped create.\n\nLove,\nJessie & Matt"
     },
     {
-      "quote": "[A quote about the bloom bar — guests always rave about it, so lead with that here.]",
-      "cite": "[Client name], [event type]"
+      "quote": "Your kindness and attention to detail made everything so easy and stress free! The flower bar was such a hit and my guests absolutely loved it.",
+      "cite": "Jenna",
+      "context": "Bridal shower · Bloom Bar",
+      "fullQuote": "Thank you so much for helping make my bridal shower so special! I truly appreciate you taking the time to personally drop off and pickup the flower bar, as well as pointing us in the right direction for florals. Your kindness and attention to detail made everything so easy and stress free!\n\nThe flower bar was such a hit and my guests absolutely loved it. Thank you again. We will definitely be recommending you to others and look forward to working with you in the future ♡"
     },
     {
-      "quote": "[A quote about working with Ayla — calm, organized, made it stress-free.]",
-      "cite": "[Couple's names], [year]"
+      "quote": "She is an amazing person & works hard to make sure your wedding day is everything you dreamed of and more ✨",
+      "cite": "@anzielkephotography",
+      "context": "Wedding photographer",
+      "fullQuote": "@ABAILEYEVENTS\n\nIs an event coordinator/planner that you’re able to hire for your wedding days & other special events such as baby showers, bridal showers, birthdays, cooperate events & so much more.\n\nBeing a wedding photographer & working with so many wonderful people on wedding days, I would highly recommend trying to elevate your planning stress by hiring someone who can essentially guide you through the process, help set up and take down, be the front person of contact for all your vendors so you don’t have a million people to check in on and constantly have your head on a swivel or stressed you might have missed something. They make your day run smoothly, keep everyone on time and are constantly one step ahead & remembering things you might have missed because you’re there to enjoy your day. If you haven’t thought about any of this for your wedding day I’d consider reaching out to see what would fit best for you to help you enjoy your wedding day with the people you love to the max while allowing your vendors to do what they do best\n\nShe is an amazing person & works hard to make sure your wedding day is everything you dreamed of and more ✨\n\nAnd all of that is just the tip of the iceberg for what a wedding planner does for you leading up to and does for you day of!"
+    },
+    {
+      "quote": "Whether it's bloom bar services, wedding decor setup, or full planning, Ayla makes sure everything is done right.",
+      "cite": "@moodbylight",
+      "context": "Event collaborator",
+      "fullQuote": "I've had the pleasure of working with @abaileyevents on three events now, and every time, I'm impressed by her attention to detail.\n\nWhether it's bloom bar services, wedding decor setup, or full planning, Ayla makes sure everything is done right.\n\nShe has a real eye for design and genuinely cares about her clients feeling happy and taken care of.\n\nIf you're looking for someone who puts in real effort, stays on trend, and keeps quality high — she's your girl!"
+    },
+    {
+      "quote": "The wedding every little girl dreams of having 😭🤍🥹 THANK YOU for making my dreams come true @abaileyevents",
+      "cite": "Erika",
+      "context": "Wedding",
+      "fullQuote": "[Instagram story · @erika.laura19]\n\nThe wedding every little girl dreams of having 😭🤍🥹 THANK YOU for making my dreams come true @abaileyevents\n\n[Instagram story · @erikalauraphotography]\n\nWe did a thing this weekend 🤍🤍 thank you to @abaileyevents for making my wedding so beautiful and to @moodbylight for the beautiful videos from the day 🤍🥰"
     }
   ]
 }

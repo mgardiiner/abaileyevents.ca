@@ -3,16 +3,43 @@ const hero = useContent('hero')
 
 const kickerParts = computed(() => hero.kicker.split(' · '))
 
-// Crossfade through the hero photos; visitors who prefer reduced motion keep the first.
+// Crossfade through the hero photos. It's an opacity fade only, so it runs under reduced
+// motion too (phones with Reduce Motion or battery saver on otherwise never left the first).
 const current = ref(0)
 let timer: ReturnType<typeof setInterval> | undefined
 
-onMounted(() => {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+function start() {
+  clearInterval(timer)
   timer = setInterval(() => {
     current.value = (current.value + 1) % hero.slides.length
   }, 5000)
-})
+}
+
+// A tap on a dot or a swipe jumps there and restarts the clock, so the next photo doesn't land right away.
+function show(i: number) {
+  current.value = (i + hero.slides.length) % hero.slides.length
+  start()
+}
+
+let touchStart: { x: number, y: number } | undefined
+
+function onTouchStart(e: TouchEvent) {
+  const t = e.touches[0]
+  touchStart = { x: t.clientX, y: t.clientY }
+}
+
+function onTouchEnd(e: TouchEvent) {
+  if (!touchStart) return
+  const t = e.changedTouches[0]
+  const dx = t.clientX - touchStart.x
+  const dy = t.clientY - touchStart.y
+  touchStart = undefined
+  // Ignore taps and mostly-vertical scrolls
+  if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return
+  show(current.value + (dx < 0 ? 1 : -1))
+}
+
+onMounted(start)
 onBeforeUnmount(() => clearInterval(timer))
 </script>
 
@@ -42,7 +69,11 @@ onBeforeUnmount(() => clearInterval(timer))
 
       <div class="relative mx-auto w-full max-w-[360px] sm:max-w-[420px]">
         <div class="absolute -right-4 -top-4 h-full w-full rounded-t-full border border-beige-deep/70" aria-hidden="true" />
-        <div class="relative aspect-[4/5] overflow-hidden rounded-t-full bg-cream shadow-lift">
+        <div
+          class="relative aspect-[4/5] touch-pan-y overflow-hidden rounded-t-full bg-cream shadow-lift"
+          @touchstart.passive="onTouchStart"
+          @touchend="onTouchEnd"
+        >
           <img
             v-for="(slide, i) in hero.slides"
             :key="slide.src"
@@ -57,13 +88,22 @@ onBeforeUnmount(() => clearInterval(timer))
         <div class="absolute -bottom-9 -left-10 hidden h-[150px] w-[150px] overflow-hidden rounded-full border-[6px] border-ivory shadow-lift sm:block">
           <img :src="hero.accent.src" :style="photoFocus(hero.accent.src)" :alt="hero.accent.alt" class="h-full w-full object-cover">
         </div>
-        <div class="absolute -bottom-4 right-2 flex gap-2" aria-hidden="true">
-          <span
+        <!-- 24px tap targets around the small dots -->
+        <div class="absolute -bottom-[25px] right-0 flex">
+          <button
             v-for="(slide, i) in hero.slides"
             :key="slide.src"
-            class="h-1.5 w-1.5 rounded-full transition-colors duration-500"
-            :class="i === current ? 'bg-sage-deep' : 'bg-sage/30'"
-          />
+            type="button"
+            class="grid h-6 w-6 place-items-center"
+            :aria-label="`Show photo ${i + 1} of ${hero.slides.length}`"
+            :aria-current="i === current"
+            @click="show(i)"
+          >
+            <span
+              class="h-1.5 w-1.5 rounded-full transition-colors duration-500"
+              :class="i === current ? 'bg-sage-deep' : 'bg-sage/30'"
+            />
+          </button>
         </div>
       </div>
     </div>

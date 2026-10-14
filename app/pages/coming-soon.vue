@@ -3,7 +3,8 @@ const comingSoon = useContent('coming-soon')
 const contact = useContent('contact')
 
 definePageMeta({ layout: false })
-useHead({ title: comingSoon.pageTitle })
+// Still prerendered so the gate can go back on, but never the page search shows.
+useHead({ title: comingSoon.pageTitle, meta: [{ name: 'robots', content: 'noindex, nofollow' }] })
 </script>
 
 <template>

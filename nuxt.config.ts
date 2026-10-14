@@ -10,8 +10,8 @@ const previewPassword = process.env.PREVIEW_PASSWORD ?? ''
 // (the middleware then redirects everyone, with no password that lets you in).
 // While the file exists, every page ships noindex and robots.txt disallows
 // everything, so the prerendered HTML can never be indexed ahead of launch.
-// To go live, delete app/middleware/coming-soon.global.ts; noindex and
-// robots.txt flip to the public version on the next build.
+// The site is live, so the file is gone; restoring it from git puts the gate,
+// noindex and the closed robots.txt back on the next build.
 const preLaunch = existsSync(new URL('app/middleware/coming-soon.global.ts', import.meta.url))
 
 // The website editor signs in with ADMIN_PASSWORD and publishes with ADMIN_GITHUB_TOKEN. The bundle
@@ -32,8 +32,8 @@ export default defineNuxtConfig({
   srcDir: 'app/',
   // Prerender to real HTML. With ssr:false the deploy served an empty
   // <div id="__nuxt"></div>, so crawlers saw no title, copy or headings.
-  // While the preview gate is on, preLaunch below keeps all of it out of
-  // the index anyway; removing PREVIEW_PASSWORD is what makes the site live.
+  // While the coming-soon gate is on, preLaunch below keeps all of it out of
+  // the index anyway.
   ssr: true,
   nitro: {
     preset: 'github-pages',

@@ -1,5 +1,5 @@
-// Prerendered at build time. While the preview gate is on, the whole site is
-// disallowed; dropping PREVIEW_PASSWORD flips this to the live version.
+// Prerendered at build time. While the coming-soon gate is on (preLaunch, see
+// nuxt.config.ts), the whole site is disallowed; otherwise this is the live version.
 export default defineEventHandler((event) => {
   const { preLaunch } = useRuntimeConfig(event).public
 

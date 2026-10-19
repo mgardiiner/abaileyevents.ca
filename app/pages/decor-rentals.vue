@@ -2,6 +2,15 @@
 const rentals = useContent('rentals')
 
 usePageSeo(rentals.seo)
+useJsonLd('rentals', () => ({
+  '@type': 'Service',
+  name: rentals.package.name,
+  serviceType: 'Wedding and event décor rental',
+  description: rentals.package.summary,
+  provider: BUSINESS,
+  areaServed: AREA_SERVED,
+  offers: offerFor(rentals.package.price),
+}))
 const failed = reactive(new Set<string>())
 </script>
 

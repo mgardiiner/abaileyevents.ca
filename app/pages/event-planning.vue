@@ -1,7 +1,29 @@
 <script setup lang="ts">
 const services = useContent('services')
+const packages = useContent('packages')
 
 usePageSeo(services.seo)
+useJsonLd('services', () => ({
+  '@graph': [
+    ...packages.items.map((item) => ({
+      '@type': 'Service',
+      name: item.name,
+      serviceType: 'Wedding planning',
+      description: item.summary,
+      provider: BUSINESS,
+      areaServed: AREA_SERVED,
+      offers: offerFor(item.price, Boolean(item.pricePrefix)),
+    })),
+    {
+      '@type': 'Service',
+      name: services.bloomBar.title,
+      serviceType: 'Bloom Bar',
+      description: services.bloomBar.body[0],
+      provider: BUSINESS,
+      areaServed: AREA_SERVED,
+    },
+  ],
+}))
 const { page } = services
 const photoFailed = ref(false)
 </script>

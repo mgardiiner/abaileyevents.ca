@@ -38,8 +38,12 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'github-pages',
     prerender: {
+      // about.html, not about/index.html: GitHub Pages 301s /about to /about/ for a folder, which
+      // left every canonical, sitemap entry and nav link pointing at a redirect. It serves
+      // about.html at /about directly.
+      autoSubfolderIndex: false,
       crawlLinks: true,
-      routes: ['/', '/404.html', '/sitemap.xml', '/robots.txt', '/coming-soon'],
+      routes: ['/', '/404.html', '/sitemap.xml', '/robots.txt', '/llms.txt', '/coming-soon'],
       failOnError: true,
     },
   },
@@ -49,6 +53,9 @@ export default defineNuxtConfig({
     '/preview': { ssr: false, index: false },
     '/logout': { ssr: false, index: false },
   },
+  // No page fetches data (content is bundled JSON), so each _payload.json was empty; it also
+  // left an about/ folder beside about.html for GitHub Pages to redirect into.
+  experimental: { payloadExtraction: false },
   compatibilityDate: '2025-07-15',
   // Off 3000 so this never shares a port with the Trend Hunter dev server.
   devServer: { port: 3001 },
@@ -64,7 +71,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/',
     head: {
-      htmlAttrs: { lang: 'en' },
+      htmlAttrs: { lang: 'en-CA' },
       title: 'ABailey Events — Wedding Planning, Bloom Bar & Décor Rentals | Simcoe Muskoka',
       meta: [
         // Belt and braces with robots.txt: nothing is indexable until launch.
@@ -73,6 +80,15 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'ABailey Events — wedding planning and coordination, Bloom Bar services and décor rentals across Simcoe Muskoka. From vision to celebration, making your moments bloom.',
         },
+        // The card a shared link unfurls into; each page sets its own og:title and og:description.
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'ABailey Events' },
+        { property: 'og:locale', content: 'en_CA' },
+        { property: 'og:image', content: 'https://abaileyevents.ca/images/share.jpg' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:image:alt', content: 'Bridal shoes, wedding rings and a white rose bouquet on a veil' },
+        { name: 'twitter:card', content: 'summary_large_image' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
